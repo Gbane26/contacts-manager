@@ -1,0 +1,10 @@
+<form method="get" action="{{ path('contact_search') }}">
+    <input type="text" name="q" value="{{ query }}" placeholder="Search contacts">
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    {% for contact in contacts %}
+        <li>{{ contact.firstName }} {{ contact.lastName }}</li>
+    {% endfor %}
+</ul>

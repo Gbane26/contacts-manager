@@ -1,0 +1,34 @@
+{{ form_start(form, { 'attr': { 'enctype': 'multipart/form-data' } }) }}
+  
+  <div class="row mb-4">
+    <div class="col">
+      {{ form_row(form.firstName) }}
+    </div>
+    <div class="col">
+      {{ form_row(form.lastName) }}
+    </div>
+  </div>
+
+  <div class="mb-4">
+    {{ form_row(form.phoneNumber) }}
+  </div>
+
+  <div class="mb-4">
+    {{ form_row(form.email) }}
+  </div>
+
+  <div class="mb-4">
+    {{ form_row(form.photo) }}
+  </div>
+
+  <div class="mb-4">
+    {{ form_row(form.customFields) }}
+  </div>
+
+  <div class="mb-4">
+    {{ form_row(form.groupName) }}
+  </div> 
+
+  <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Save</button>
+
+{{ form_end(form) }}

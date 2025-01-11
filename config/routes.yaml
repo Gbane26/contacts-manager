@@ -1,0 +1,43 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+# config/routes.yaml
+
+# Page d'accueil
+app_home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+# Liste des contacts
+contact_list:
+    path: /contacts
+    controller: App\Controller\ContactController::listContacts
+
+# Détails d'un contact
+contact_show:
+    path: /contact/{id}
+    controller: App\Controller\ContactController::showContact
+    requirements:
+        id: \d+
+
+# Ajouter un nouveau contact
+contact_create:
+    path: /contact/create
+    controller: App\Controller\ContactController::createContact
+
+# Modifier un contact
+contact_edit:
+    path: /contact/{id}/edit
+    controller: App\Controller\ContactController::editContact
+    requirements:
+        id: \d+
+
+# Supprimer un contact
+contact_delete:
+    path: /contact/{id}/delete
+    controller: App\Controller\ContactController::deleteContact
+    requirements:
+        id: \d+
