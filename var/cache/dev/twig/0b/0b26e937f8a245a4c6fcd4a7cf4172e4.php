@@ -194,12 +194,13 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
 
     <!-- MDB -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
     <!-- Custom scripts -->
 <script type=\"text/javascript\" src=\"js/script.js\"></script>
 ";
-        // line 197
-        yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
         // line 198
+        yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
+        // line 199
         yield "</body>
 </html>
 ";
@@ -344,7 +345,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
         yield from [];
     }
 
-    // line 197
+    // line 198
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -387,7 +388,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  348 => 197,  284 => 115,  274 => 107,  261 => 106,  239 => 18,  216 => 7,  203 => 198,  201 => 197,  181 => 179,  179 => 178,  167 => 168,  165 => 106,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  349 => 198,  285 => 115,  275 => 107,  262 => 106,  240 => 18,  217 => 7,  204 => 199,  202 => 198,  181 => 179,  179 => 178,  167 => 168,  165 => 106,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -586,6 +587,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
 
     <!-- MDB -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
     <!-- Custom scripts -->
 <script type=\"text/javascript\" src=\"js/script.js\"></script>
 {% block scripts %}{% endblock %}

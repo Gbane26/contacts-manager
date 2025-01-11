@@ -45,6 +45,21 @@ final class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // Gestion de l'upload de la photo (si un fichier est téléchargé)
+            $photo = $form->get('photo')->getData();
+            if ($photo) {
+                try {
+                    // Générer un nom unique pour le fichier
+                    $filename = uniqid() . '.' . $photo->guessExtension();
+                    $photo->move($this->getParameter('photos_directory'), $filename);
+                    $contact->setPhoto($filename);
+                } catch (\Exception $e) {
+                    $this->addFlash('error', 'Une erreur est survenue lors de l\'upload de la photo.');
+                    return $this->redirectToRoute('app_contact_new');
+                }
+            }
+
+
             // Si le contact est le premier dans un groupe, vérifiez si le groupe existe
             $group = $contact->getGroupName();
             if ($group && !$group->getContacts()->count()) {

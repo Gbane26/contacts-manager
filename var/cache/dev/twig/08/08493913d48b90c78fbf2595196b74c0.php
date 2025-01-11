@@ -123,14 +123,58 @@ class __TwigTemplate_0c21b4dbe9e854aff342609fe370f67f extends Template
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 46)]), "html", null, true);
             yield "\" class=\"btn btn-link btn-sm btn-rounded\">Details</a>
 
-                          <button type=\"button\" class=\"btn btn-danger btn-sm btn-rounded\">Delete</button>
+                          <!-- Delete button with modal trigger -->
+                        <button type=\"button\" class=\"btn btn-danger btn-sm btn-rounded\" data-bs-toggle=\"modal\" data-bs-target=\"#deleteModal";
+            // line 49
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 49), "html", null, true);
+            yield "\">
+                            Delete
+                        </button>
+                        <!-- Delete Confirmation Modal -->
+                        <div class=\"modal fade\" id=\"deleteModal";
+            // line 53
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 53), "html", null, true);
+            yield "\" tabindex=\"-1\" aria-labelledby=\"deleteModalLabel";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 53), "html", null, true);
+            yield "\" aria-hidden=\"true\">
+                            <div class=\"modal-dialog modal-dialog-centered\">
+                                <div class=\"modal-content\">
+                                    <!-- Modal Header -->
+                                    <div class=\"modal-header\">
+                                        <h5 class=\"modal-title\" id=\"deleteModalLabel";
+            // line 58
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 58), "html", null, true);
+            yield "\">Confirm Deletion</h5>
+                                        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                                    </div>
+                                    <!-- Modal Body -->
+                                    <div class=\"modal-body\">
+                                        Are you sure you want to delete this contact?
+                                    </div>
+                                    <!-- Modal Footer -->
+                                    <div class=\"modal-footer\">
+                                        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button>
+                                        <form method=\"post\" action=\"";
+            // line 68
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 68)]), "html", null, true);
+            yield "\">
+                                            <input type=\"hidden\" name=\"_token\" value=\"";
+            // line 69
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 69))), "html", null, true);
+            yield "\">
+                                            <button type=\"submit\" class=\"btn btn-danger\">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                       </td>
                   </tr>
               ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 52
+            // line 79
             yield "              <tr>
                   <td colspan=\"5\" class=\"text-center\">Aucun contact trouvé.</td>
               </tr>
@@ -139,11 +183,12 @@ class __TwigTemplate_0c21b4dbe9e854aff342609fe370f67f extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['contact'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 83
         yield "              </tbody>
           </table>
         </div>
       </div>
+     
     </section>
     <!--Section: Content-->
 
@@ -178,7 +223,7 @@ class __TwigTemplate_0c21b4dbe9e854aff342609fe370f67f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  143 => 56,  134 => 52,  123 => 46,  119 => 45,  114 => 43,  109 => 41,  97 => 32,  91 => 31,  82 => 25,  74 => 21,  69 => 20,  48 => 1,);
+        return array (  187 => 83,  178 => 79,  163 => 69,  159 => 68,  146 => 58,  136 => 53,  129 => 49,  123 => 46,  119 => 45,  114 => 43,  109 => 41,  97 => 32,  91 => 31,  82 => 25,  74 => 21,  69 => 20,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -230,7 +275,34 @@ class __TwigTemplate_0c21b4dbe9e854aff342609fe370f67f extends Template
                         <a href=\"{{ path('contact_edit', { 'id': contact.id }) }}\" class=\"btn btn-link btn-sm btn-rounded\">Edit</a>
                         <a href=\"{{ path('contact_show', { 'id': contact.id }) }}\" class=\"btn btn-link btn-sm btn-rounded\">Details</a>
 
-                          <button type=\"button\" class=\"btn btn-danger btn-sm btn-rounded\">Delete</button>
+                          <!-- Delete button with modal trigger -->
+                        <button type=\"button\" class=\"btn btn-danger btn-sm btn-rounded\" data-bs-toggle=\"modal\" data-bs-target=\"#deleteModal{{ contact.id }}\">
+                            Delete
+                        </button>
+                        <!-- Delete Confirmation Modal -->
+                        <div class=\"modal fade\" id=\"deleteModal{{ contact.id }}\" tabindex=\"-1\" aria-labelledby=\"deleteModalLabel{{ contact.id }}\" aria-hidden=\"true\">
+                            <div class=\"modal-dialog modal-dialog-centered\">
+                                <div class=\"modal-content\">
+                                    <!-- Modal Header -->
+                                    <div class=\"modal-header\">
+                                        <h5 class=\"modal-title\" id=\"deleteModalLabel{{ contact.id }}\">Confirm Deletion</h5>
+                                        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                                    </div>
+                                    <!-- Modal Body -->
+                                    <div class=\"modal-body\">
+                                        Are you sure you want to delete this contact?
+                                    </div>
+                                    <!-- Modal Footer -->
+                                    <div class=\"modal-footer\">
+                                        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button>
+                                        <form method=\"post\" action=\"{{ path('app_contact_delete', {'id': contact.id}) }}\">
+                                            <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ contact.id) }}\">
+                                            <button type=\"submit\" class=\"btn btn-danger\">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                       </td>
                   </tr>
               {% else %}
@@ -242,6 +314,7 @@ class __TwigTemplate_0c21b4dbe9e854aff342609fe370f67f extends Template
           </table>
         </div>
       </div>
+     
     </section>
     <!--Section: Content-->
 
