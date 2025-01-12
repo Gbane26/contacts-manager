@@ -122,7 +122,10 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\" href=\"";
+        // line 68
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield "\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"
@@ -580,7 +583,7 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  541 => 265,  484 => 112,  474 => 105,  464 => 97,  451 => 96,  429 => 18,  406 => 7,  393 => 266,  391 => 265,  368 => 244,  364 => 242,  358 => 238,  342 => 235,  338 => 233,  335 => 232,  312 => 215,  306 => 214,  292 => 202,  287 => 201,  285 => 200,  279 => 197,  274 => 195,  267 => 194,  250 => 193,  242 => 187,  224 => 183,  220 => 182,  216 => 181,  211 => 179,  206 => 177,  199 => 176,  182 => 175,  176 => 171,  174 => 170,  160 => 158,  158 => 96,  137 => 78,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  544 => 265,  487 => 112,  477 => 105,  467 => 97,  454 => 96,  432 => 18,  409 => 7,  396 => 266,  394 => 265,  371 => 244,  367 => 242,  361 => 238,  345 => 235,  341 => 233,  338 => 232,  315 => 215,  309 => 214,  295 => 202,  290 => 201,  288 => 200,  282 => 197,  277 => 195,  270 => 194,  253 => 193,  245 => 187,  227 => 183,  223 => 182,  219 => 181,  214 => 179,  209 => 177,  202 => 176,  185 => 175,  179 => 171,  177 => 170,  163 => 158,  161 => 96,  140 => 78,  127 => 68,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -652,7 +655,7 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\" href=\"{{ path('app_contact_index') }}\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"

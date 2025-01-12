@@ -66,17 +66,18 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap\" />
     <!-- MDB -->
     <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css\" rel=\"stylesheet\" />
-    <!-- Custom styles -->
-    <link rel=\"stylesheet\" href=\"css/style.css\" />
+    <!-- DataTables CSS -->
+    <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css\" />
 
+    <!-- Custom styles -->
     ";
-        // line 18
-        yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
         // line 19
-        yield "    
-</head>
+        yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
+        // line 20
+        yield "</head>
 <body>
-    <!--Main Navigation-->
+
+   <!--Main Navigation-->
 <header>
   <style>
     /* Carousel styling */
@@ -122,7 +123,10 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\" href=\"";
+        // line 69
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield "\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"
@@ -133,21 +137,12 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
         <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
           <li class=\"nav-item active\">
             <a class=\"nav-link\" aria-current=\"page\" href=\"";
-        // line 78
+        // line 79
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
         yield "\">Accueil</a>
           </li>
         </ul>
 
-        <ul class=\"navbar-nav d-flex flex-row\">
-            <!-- Search bar -->
-            <li class=\"nav-item me-3 me-lg-0\">
-              <input id=\"search-input\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
-            </li>
-            <li class=\"nav-item me-3 me-lg-0\">
-              <button id=\"search-btn\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"button\">Recherche</button>
-            </li>
-        </ul>
       </div>
     </div>
   </nav>
@@ -164,46 +159,63 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
     <!-- Inner -->
     <div class=\"carousel-inner\">
       ";
-        // line 106
+        // line 98
         yield from $this->unwrap()->yieldBlock('carousel', $context, $blocks);
-        // line 168
+        // line 160
         yield "    </div>
     <!-- Inner -->
   </div>
   <!-- Carousel wrapper -->
 </header>
 <!--Main Navigation-->
-
-<!--Main layout-->
-<main class=\"mt-5\">
-  <div class=\"container\">
-    ";
-        // line 178
-        yield from $this->loadTemplate("contact/list.html.twig", "base.html.twig", 178)->unwrap()->yield($context);
-        // line 179
-        yield "  </div>
-</main>
-<!--Main layout-->
-
-<!--Footer-->
-<footer class=\"bg-light text-lg-start\">
-  <!-- Copyright -->
-  <div class=\"text-center p-3\" style=\"background-color: rgba(0, 0, 0, 0.2);\">
-    © 2024 Librairie en ligne. Tous droits réservés.
-    <a class=\"text-dark\" href=\"index.html\">Ahamadou</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+    <!-- Main content -->
+    <main class=\"mt-5\">
+        <div class=\"container\">
+            <!-- Section: Content -->
+            ";
+        // line 170
+        yield from $this->loadTemplate("contact/list.html.twig", "base.html.twig", 170)->unwrap()->yield($context);
+        // line 171
+        yield "        </div>
+    </main>
+    <!-- Main content -->
+    
+    <!-- Footer -->
+    <footer class=\"bg-light text-lg-start\">
+        <!-- Copyright -->
+        <div class=\"text-center p-3\" style=\"background-color: rgba(0, 0, 0, 0.2);\">
+            © 2024 Contact en ligne. Tous droits réservés.
+            <a class=\"text-dark\" href=\"index.html\">Ahamadou</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
     <!-- MDB -->
-<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js\"></script>
-<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
-    <!-- Custom scripts -->
-<script type=\"text/javascript\" src=\"js/script.js\"></script>
-";
-        // line 198
+    <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
+    <!-- DataTables JS -->
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    <script src=\"https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js\"></script>
+
+    <script>
+        \$(document).ready(function () {
+            // Initialisation de DataTables
+            \$('#datatable').DataTable({
+                paging: true, // Activer la pagination
+                searching: true, // Activer la recherche
+                ordering: true, // Activer le tri
+                info: true, // Afficher les informations (ex. \"10 sur 50 entrées\")
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.13.1/i18n/French.json' // Langue française
+                }
+            });
+        });
+    </script>
+
+    ";
+        // line 207
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
-        // line 199
+        // line 208
         yield "</body>
 </html>
 ";
@@ -239,7 +251,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
         yield from [];
     }
 
-    // line 18
+    // line 19
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -261,7 +273,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
         yield from [];
     }
 
-    // line 106
+    // line 98
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -274,7 +286,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "carousel"));
 
-        // line 107
+        // line 99
         yield "      <!-- Single item -->
       <div class=\"carousel-item active\">
         <div class=\"mask\" style=\"background-color: rgba(0, 0, 0, 0.6);\">
@@ -284,7 +296,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
               <a
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
                  href=\"";
-        // line 115
+        // line 107
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_new");
         yield "\"
                  role=\"button\"
@@ -294,7 +306,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
               <a
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
                  href=\"";
-        // line 122
+        // line 114
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_group_index");
         yield "\"
                  role=\"button\"
@@ -351,7 +363,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
         yield from [];
     }
 
-    // line 198
+    // line 207
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -394,7 +406,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  355 => 198,  298 => 122,  288 => 115,  278 => 107,  265 => 106,  243 => 18,  220 => 7,  207 => 199,  205 => 198,  184 => 179,  182 => 178,  170 => 168,  168 => 106,  137 => 78,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  367 => 207,  310 => 114,  300 => 107,  290 => 99,  277 => 98,  255 => 19,  232 => 7,  219 => 208,  217 => 207,  179 => 171,  177 => 170,  165 => 160,  163 => 98,  141 => 79,  128 => 69,  77 => 20,  75 => 19,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -413,14 +425,15 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap\" />
     <!-- MDB -->
     <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css\" rel=\"stylesheet\" />
-    <!-- Custom styles -->
-    <link rel=\"stylesheet\" href=\"css/style.css\" />
+    <!-- DataTables CSS -->
+    <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css\" />
 
+    <!-- Custom styles -->
     {% block stylesheets %}{% endblock %}
-    
 </head>
 <body>
-    <!--Main Navigation-->
+
+   <!--Main Navigation-->
 <header>
   <style>
     /* Carousel styling */
@@ -466,7 +479,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\" href=\"{{ path('app_contact_index') }}\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"
@@ -480,15 +493,6 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
           </li>
         </ul>
 
-        <ul class=\"navbar-nav d-flex flex-row\">
-            <!-- Search bar -->
-            <li class=\"nav-item me-3 me-lg-0\">
-              <input id=\"search-input\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
-            </li>
-            <li class=\"nav-item me-3 me-lg-0\">
-              <button id=\"search-btn\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"button\">Recherche</button>
-            </li>
-        </ul>
       </div>
     </div>
   </nav>
@@ -572,31 +576,48 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
   <!-- Carousel wrapper -->
 </header>
 <!--Main Navigation-->
-
-<!--Main layout-->
-<main class=\"mt-5\">
-  <div class=\"container\">
-    {% include 'contact/list.html.twig' %}
-  </div>
-</main>
-<!--Main layout-->
-
-<!--Footer-->
-<footer class=\"bg-light text-lg-start\">
-  <!-- Copyright -->
-  <div class=\"text-center p-3\" style=\"background-color: rgba(0, 0, 0, 0.2);\">
-    © 2024 Librairie en ligne. Tous droits réservés.
-    <a class=\"text-dark\" href=\"index.html\">Ahamadou</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+    <!-- Main content -->
+    <main class=\"mt-5\">
+        <div class=\"container\">
+            <!-- Section: Content -->
+            {% include 'contact/list.html.twig' %}
+        </div>
+    </main>
+    <!-- Main content -->
+    
+    <!-- Footer -->
+    <footer class=\"bg-light text-lg-start\">
+        <!-- Copyright -->
+        <div class=\"text-center p-3\" style=\"background-color: rgba(0, 0, 0, 0.2);\">
+            © 2024 Contact en ligne. Tous droits réservés.
+            <a class=\"text-dark\" href=\"index.html\">Ahamadou</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
     <!-- MDB -->
-<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js\"></script>
-<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
-    <!-- Custom scripts -->
-<script type=\"text/javascript\" src=\"js/script.js\"></script>
-{% block scripts %}{% endblock %}
+    <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
+    <!-- DataTables JS -->
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    <script src=\"https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js\"></script>
+
+    <script>
+        \$(document).ready(function () {
+            // Initialisation de DataTables
+            \$('#datatable').DataTable({
+                paging: true, // Activer la pagination
+                searching: true, // Activer la recherche
+                ordering: true, // Activer le tri
+                info: true, // Afficher les informations (ex. \"10 sur 50 entrées\")
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.13.1/i18n/French.json' // Langue française
+                }
+            });
+        });
+    </script>
+
+    {% block scripts %}{% endblock %}
 </body>
 </html>
 ", "base.html.twig", "/Users/ahamadougbane/Desktop/Open IT/Master 1/Dev/contacts-manager/templates/base.html.twig");

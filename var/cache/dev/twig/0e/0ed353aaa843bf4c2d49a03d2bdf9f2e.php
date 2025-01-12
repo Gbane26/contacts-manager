@@ -122,7 +122,10 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\" href=\"";
+        // line 68
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield "\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"
@@ -137,16 +140,6 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
         yield "\">Accueil</a>
           </li>
-        </ul>
-
-        <ul class=\"navbar-nav d-flex flex-row\">
-            <!-- Search bar -->
-            <li class=\"nav-item me-3 me-lg-0\">
-              <input id=\"search-input\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
-            </li>
-            <li class=\"nav-item me-3 me-lg-0\">
-              <button id=\"search-btn\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"button\">Recherche</button>
-            </li>
         </ul>
       </div>
     </div>
@@ -163,9 +156,9 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
     <!-- Inner -->
     <div class=\"carousel-inner\">
       ";
-        // line 105
+        // line 95
         yield from $this->unwrap()->yieldBlock('carousel', $context, $blocks);
-        // line 118
+        // line 108
         yield "    </div>
     <!-- Inner -->
   </div>
@@ -174,13 +167,13 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
 <!--Main Navigation-->
 
 <!--Main layout <a href=\"";
-        // line 125
+        // line 115
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
         yield "\">back to list</a>-->
 <main class=\"mt-5\">
   <div class=\"container\">
     ";
-        // line 128
+        // line 118
         yield Twig\Extension\CoreExtension::include($this->env, $context, "contact/_form.html.twig");
         yield "
   </div>
@@ -201,9 +194,9 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js\"></script>
     <!-- Custom scripts -->
 ";
-        // line 146
+        // line 136
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
-        // line 147
+        // line 137
         yield "</body>
 </html>
 ";
@@ -261,7 +254,7 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
         yield from [];
     }
 
-    // line 105
+    // line 95
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -274,7 +267,7 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "carousel"));
 
-        // line 106
+        // line 96
         yield "      <!-- Single item -->
       <div class=\"carousel-item active\">
         <div class=\"mask\" style=\"background-color: rgba(0, 0, 0, 0.6);\">
@@ -296,7 +289,7 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
         yield from [];
     }
 
-    // line 146
+    // line 136
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -339,7 +332,7 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  300 => 146,  278 => 106,  265 => 105,  243 => 18,  220 => 7,  207 => 147,  205 => 146,  184 => 128,  178 => 125,  169 => 118,  167 => 105,  137 => 78,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  293 => 136,  271 => 96,  258 => 95,  236 => 18,  213 => 7,  200 => 137,  198 => 136,  177 => 118,  171 => 115,  162 => 108,  160 => 95,  140 => 78,  127 => 68,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -411,7 +404,7 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\" href=\"{{ path('app_contact_index') }}\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"
@@ -423,16 +416,6 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
           <li class=\"nav-item active\">
             <a class=\"nav-link\" aria-current=\"page\" href=\"{{ path('app_contact_index') }}\">Accueil</a>
           </li>
-        </ul>
-
-        <ul class=\"navbar-nav d-flex flex-row\">
-            <!-- Search bar -->
-            <li class=\"nav-item me-3 me-lg-0\">
-              <input id=\"search-input\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
-            </li>
-            <li class=\"nav-item me-3 me-lg-0\">
-              <button id=\"search-btn\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"button\">Recherche</button>
-            </li>
         </ul>
       </div>
     </div>
