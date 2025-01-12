@@ -295,35 +295,20 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
         <div class=\"row d-flex justify-content-center\">
             <!--Grid column-->
             <div class=\"col-md-6 text-center\">
-                <h4 class=\"my-4 h4\">Additional information</h4>
+                <h4 class=\"my-4 h4\">Ajouter une information </h4>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit voluptates, quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+               <div class=\"container\">
+                ";
+        // line 259
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "contact/_fieldsform.html.twig");
+        yield "
+              </div>
             </div>
             <!--Grid column-->
         </div>
         <!--Grid row-->
 
-        <!--Grid row-->
-        <div class=\"row\">
-            <!--Grid column-->
-            <div class=\"col-lg-4 col-md-12 mb-4\">
-                <img src=\"https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg\" class=\"img-fluid\" alt=\"\" />
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class=\"col-lg-4 col-md-6 mb-4\">
-                <img src=\"https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg\" class=\"img-fluid\" alt=\"\" />
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class=\"col-lg-4 col-md-6 mb-4\">
-                <img src=\"https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg\" class=\"img-fluid\" alt=\"\" />
-            </div>
-            <!--Grid column-->
-        </div>
-        <!--Grid row-->
+       
     </div>
 </main>
 <!--Main layout-->
@@ -346,9 +331,9 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
 <script type=\"text/javascript\" src=\"js/script.js\"></script>
 
 ";
-        // line 306
+        // line 288
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
-        // line 307
+        // line 289
         yield "</body>
 </html>
 
@@ -503,7 +488,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
         yield from [];
     }
 
-    // line 306
+    // line 288
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -546,7 +531,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  507 => 306,  450 => 113,  440 => 106,  430 => 98,  417 => 97,  395 => 19,  372 => 7,  352 => 307,  350 => 306,  271 => 230,  267 => 229,  254 => 219,  244 => 214,  235 => 208,  228 => 204,  221 => 200,  217 => 199,  213 => 198,  206 => 196,  192 => 185,  177 => 173,  161 => 159,  159 => 97,  138 => 79,  77 => 20,  75 => 19,  60 => 7,  52 => 1,);
+        return array (  492 => 288,  435 => 113,  425 => 106,  415 => 98,  402 => 97,  380 => 19,  357 => 7,  337 => 289,  335 => 288,  303 => 259,  271 => 230,  267 => 229,  254 => 219,  244 => 214,  235 => 208,  228 => 204,  221 => 200,  217 => 199,  213 => 198,  206 => 196,  192 => 185,  177 => 173,  161 => 159,  159 => 97,  138 => 79,  77 => 20,  75 => 19,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -806,35 +791,17 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
         <div class=\"row d-flex justify-content-center\">
             <!--Grid column-->
             <div class=\"col-md-6 text-center\">
-                <h4 class=\"my-4 h4\">Additional information</h4>
+                <h4 class=\"my-4 h4\">Ajouter une information </h4>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit voluptates, quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+               <div class=\"container\">
+                {{ include('contact/_fieldsform.html.twig') }}
+              </div>
             </div>
             <!--Grid column-->
         </div>
         <!--Grid row-->
 
-        <!--Grid row-->
-        <div class=\"row\">
-            <!--Grid column-->
-            <div class=\"col-lg-4 col-md-12 mb-4\">
-                <img src=\"https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg\" class=\"img-fluid\" alt=\"\" />
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class=\"col-lg-4 col-md-6 mb-4\">
-                <img src=\"https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg\" class=\"img-fluid\" alt=\"\" />
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class=\"col-lg-4 col-md-6 mb-4\">
-                <img src=\"https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg\" class=\"img-fluid\" alt=\"\" />
-            </div>
-            <!--Grid column-->
-        </div>
-        <!--Grid row-->
+       
     </div>
 </main>
 <!--Main layout-->

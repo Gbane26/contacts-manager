@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Entity\Group;
+use App\Entity\CustomFields;
 use App\Form\ContactType;
+use App\Form\CustomFieldsType;
 use App\Repository\ContactRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -68,12 +70,22 @@ final class ContactController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_contact_show', methods: ['GET'])]
-    public function show(Contact $contact): Response
-    {
-        return $this->render('contact/show.html.twig', [
-            'contact' => $contact,
-        ]);
+    public function show(Request $request, Contact $contact): Response
+{
+    $customFields = new CustomFields();
+    $form = $this->createForm(CustomFieldsType::class, $customFields);
+    $form->handleRequest($request);
+
+    // Optionnel : vérifier si le formulaire est soumis et valide
+    if ($form->isSubmitted() && $form->isValid()) {
+        // Faites quelque chose avec les données du formulaire
     }
+
+    return $this->render('contact/show.html.twig', [
+        'contact' => $contact,
+        'form' => $form->createView(),
+    ]);
+}
 
     #[Route('/{id}/edit', name: 'app_contact_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Contact $contact, EntityManagerInterface $entityManager): Response
