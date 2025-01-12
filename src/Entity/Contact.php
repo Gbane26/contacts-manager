@@ -30,12 +30,8 @@ class Contact
     #[ORM\Column(nullable: true)]
     private ?array $customFields = null;
 
-   /**
-     * @ORM\ManyToOne(targetEntity=Group::class, cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true)
-     */
+    #[ORM\ManyToOne(inversedBy: 'contacts')]
     private ?Group $groupName = null;
-
 
 
 

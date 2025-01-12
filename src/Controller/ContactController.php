@@ -36,10 +36,8 @@ final class ContactController extends AbstractController
             if (!empty($newGroup)) {
                 $group = new Group();
                 $group->setName($newGroup);
-
                 // Persist le nouveau groupe
                 $entityManager->persist($group);
-
                 // Associe le groupe au contact
                 $contact->setGroupName($group);
             }

@@ -96,9 +96,9 @@ class ContactType extends AbstractType
             ->add('newGroup', TextType::class, [
                 'mapped' => false, // Champ non mappé directement à l'entité
                 'required' => false,
-                'attr' => ['class' => 'form-control', 'id' => 'contact_groupName', 'placeholder' => 'Ajouter un nouveau groupe'],
+                'attr' => ['class' => 'form-control', 'id' => 'contact_newGroup', 'placeholder' => 'Ajouter un nouveau groupe'],
                 'label' => 'Ajouter un nouveau groupe',
-                'label_attr' => ['class' => 'form-label', 'for' => 'contact_groupName'],
+                'label_attr' => ['class' => 'form-label', 'for' => 'contact_newGroup'],
             ]);
         // Gestion dynamique pour assigner le nouveau groupe s'il est saisi
         $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) {
