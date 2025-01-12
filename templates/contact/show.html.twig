@@ -199,6 +199,12 @@
                     <p>{{ contact.email }}</p>
                     <p>{{ contact.customFields ? contact.customFields|json_encode : '' }}</p>
 
+                    {% for customField in contact.fieldsCustom %}
+                        <p>
+                          {{ customField.name }} : {{ customField.description }}
+                        </p>
+                    {% endfor %}
+
                     <div class="d-flex align-items-center">
                        
                             <a href="{{ path('contact_edit', { 'id': contact.id }) }}" class="btn btn-link btn-sm btn-rounded">Edit</a>
@@ -209,6 +215,10 @@
                             Delete
                         </button>
                     </div>
+
+                    
+
+
 
                     <!-- Delete Confirmation Modal -->
                     <div class="modal fade" id="deleteModal{{ contact.id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ contact.id }}" aria-hidden="true">

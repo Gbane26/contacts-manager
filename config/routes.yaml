@@ -9,7 +9,7 @@ controllers:
 # Page d'accueil
 app_home:
     path: /
-    controller: App\Controller\HomeController::index
+    controller: App\Controller\ContactController::index
 
 # Liste des contacts
 contact_list:

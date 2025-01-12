@@ -20,7 +20,7 @@ return [
         '/contact/contact/search' => [[['_route' => 'contact_search', '_controller' => 'App\\Controller\\ContactController::search'], null, null, null, false, false, null]],
         '/group' => [[['_route' => 'app_group_index', '_controller' => 'App\\Controller\\GroupController::index'], null, ['GET' => 0], null, false, false, null]],
         '/group/new' => [[['_route' => 'app_group_new', '_controller' => 'App\\Controller\\GroupController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
         '/contacts' => [[['_route' => 'contact_list', '_controller' => 'App\\Controller\\ContactController::listContacts'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
@@ -46,18 +46,20 @@ return [
                 .'|/contact/(?'
                     .'|([^/]++)(?'
                         .'|(*:225)'
-                        .'|/edit(*:238)'
-                        .'|(*:246)'
+                        .'|/(?'
+                            .'|edit(*:241)'
+                            .'|delete(*:255)'
+                        .')'
                     .')'
-                    .'|(\\d+)(*:260)'
-                    .'|create(*:274)'
-                    .'|(\\d+)/edit(*:292)'
-                    .'|(\\d+)/delete(*:312)'
+                    .'|(\\d+)(*:270)'
+                    .'|create(*:284)'
+                    .'|(\\d+)/edit(*:302)'
+                    .'|(\\d+)/delete(*:322)'
                 .')'
                 .'|/group/([^/]++)(?'
-                    .'|(*:339)'
-                    .'|/edit(*:352)'
-                    .'|(*:360)'
+                    .'|(*:349)'
+                    .'|/edit(*:362)'
+                    .'|(*:370)'
                 .')'
             .')/?$}sDu',
     ],
@@ -70,16 +72,16 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        225 => [[['_route' => 'app_contact_show', '_controller' => 'App\\Controller\\ContactController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        238 => [[['_route' => 'app_contact_edit', '_controller' => 'App\\Controller\\ContactController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        246 => [[['_route' => 'app_contact_delete', '_controller' => 'App\\Controller\\ContactController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        260 => [[['_route' => 'contact_show', '_controller' => 'App\\Controller\\ContactController::showContact'], ['id'], null, null, false, true, null]],
-        274 => [[['_route' => 'contact_create', '_controller' => 'App\\Controller\\ContactController::createContact'], [], null, null, false, false, null]],
-        292 => [[['_route' => 'contact_edit', '_controller' => 'App\\Controller\\ContactController::editContact'], ['id'], null, null, false, false, null]],
-        312 => [[['_route' => 'contact_delete', '_controller' => 'App\\Controller\\ContactController::deleteContact'], ['id'], null, null, false, false, null]],
-        339 => [[['_route' => 'app_group_show', '_controller' => 'App\\Controller\\GroupController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        352 => [[['_route' => 'app_group_edit', '_controller' => 'App\\Controller\\GroupController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        360 => [
+        225 => [[['_route' => 'app_contact_show', '_controller' => 'App\\Controller\\ContactController::show'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        241 => [[['_route' => 'app_contact_edit', '_controller' => 'App\\Controller\\ContactController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        255 => [[['_route' => 'app_contact_delete', '_controller' => 'App\\Controller\\ContactController::delete'], ['id'], ['POST' => 0], null, false, false, null]],
+        270 => [[['_route' => 'contact_show', '_controller' => 'App\\Controller\\ContactController::showContact'], ['id'], null, null, false, true, null]],
+        284 => [[['_route' => 'contact_create', '_controller' => 'App\\Controller\\ContactController::createContact'], [], null, null, false, false, null]],
+        302 => [[['_route' => 'contact_edit', '_controller' => 'App\\Controller\\ContactController::editContact'], ['id'], null, null, false, false, null]],
+        322 => [[['_route' => 'contact_delete', '_controller' => 'App\\Controller\\ContactController::deleteContact'], ['id'], null, null, false, false, null]],
+        349 => [[['_route' => 'app_group_show', '_controller' => 'App\\Controller\\GroupController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        362 => [[['_route' => 'app_group_edit', '_controller' => 'App\\Controller\\GroupController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        370 => [
             [['_route' => 'app_group_delete', '_controller' => 'App\\Controller\\GroupController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

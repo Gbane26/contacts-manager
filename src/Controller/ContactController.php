@@ -69,23 +69,30 @@ final class ContactController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_contact_show', methods: ['GET'])]
-    public function show(Request $request, Contact $contact): Response
-{
-    $customFields = new CustomFields();
-    $form = $this->createForm(CustomFieldsType::class, $customFields);
-    $form->handleRequest($request);
 
-    // Optionnel : vérifier si le formulaire est soumis et valide
-    if ($form->isSubmitted() && $form->isValid()) {
-        // Faites quelque chose avec les données du formulaire
+    #[Route('/{id}', name: 'app_contact_show', methods: ['GET', 'POST'])]
+    public function show(Request $request, EntityManagerInterface $entityManager, Contact $contact): Response
+    {
+        $customFields = new CustomFields();
+        $form = $this->createForm(CustomFieldsType::class, $customFields);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $customFields->setContact($contact);
+            $entityManager->persist($customFields);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_contact_show', [
+                'id' => $contact->getId(),
+            ]);
+        }
+
+        return $this->render('contact/show.html.twig', [
+            'contact' => $contact,
+            'form' => $form->createView(),
+        ]);
     }
 
-    return $this->render('contact/show.html.twig', [
-        'contact' => $contact,
-        'form' => $form->createView(),
-    ]);
-}
 
     #[Route('/{id}/edit', name: 'app_contact_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Contact $contact, EntityManagerInterface $entityManager): Response
@@ -105,18 +112,22 @@ final class ContactController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_contact_delete', methods: ['POST'])]
+    #[Route('/{id}/delete', name: 'app_contact_delete', methods: ['POST'])]
     public function delete(Request $request, Contact $contact, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete' . $contact->getId(), $request->request->get('_token'))) {
-            // Récupérer le groupe avant de supprimer le contact
-            $group = $contact->getGroupName();
-
+            // Supprimer les enregistrements dans custom_fields associés au contact
+            $customFields = $entityManager->getRepository(CustomFields::class)->findBy(['contact' => $contact]);
+            foreach ($customFields as $field) {
+                $entityManager->remove($field);
+            }
+    
             // Supprimer le contact
             $entityManager->remove($contact);
             $entityManager->flush();
-
-            // Supprimer le groupe s'il est vide
+    
+            // Si nécessaire, supprimer le groupe associé si ce dernier est vide
+            $group = $contact->getGroupName();
             if ($group) {
                 $isGroupEmpty = $entityManager->getRepository(Contact::class)
                     ->createQueryBuilder('c')
@@ -125,16 +136,18 @@ final class ContactController extends AbstractController
                     ->setParameter('group', $group)
                     ->getQuery()
                     ->getSingleScalarResult();
-
+    
                 if ($isGroupEmpty == 0) {
                     $entityManager->remove($group);
                     $entityManager->flush();
                 }
             }
         }
-
+    
         return $this->redirectToRoute('app_contact_index');
     }
+    
+
 
     #[Route('/contact/search', name: 'contact_search')]
     public function search(Request $request, EntityManagerInterface $entityManager)

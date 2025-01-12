@@ -62,13 +62,11 @@ class __TwigTemplate_d0a7a4eb7d343615f9424af8b1add018 extends Template
         yield "
     </div>
   </div>
-
-
   <button data-mdb-ripple-init type=\"submit\" class=\"btn btn-primary btn-block mb-4\">Save</button>
 
 ";
-        // line 15
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form_end');
+        // line 13
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'form_end');
         yield "
 ";
         
@@ -101,7 +99,7 @@ class __TwigTemplate_d0a7a4eb7d343615f9424af8b1add018 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  71 => 15,  61 => 8,  55 => 5,  48 => 1,);
+        return array (  69 => 13,  61 => 8,  55 => 5,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -116,8 +114,6 @@ class __TwigTemplate_d0a7a4eb7d343615f9424af8b1add018 extends Template
       {{ form_row(form.description) }}
     </div>
   </div>
-
-
   <button data-mdb-ripple-init type=\"submit\" class=\"btn btn-primary btn-block mb-4\">Save</button>
 
 {{ form_end(form) }}

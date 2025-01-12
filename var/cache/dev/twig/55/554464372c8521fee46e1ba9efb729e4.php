@@ -221,37 +221,62 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
         yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 200, $this->source); })()), "customFields", [], "any", false, false, false, 200)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(json_encode(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 200, $this->source); })()), "customFields", [], "any", false, false, false, 200)), "html", null, true)) : (""));
         yield "</p>
 
+                    ";
+        // line 202
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 202, $this->source); })()), "fieldsCustom", [], "any", false, false, false, 202));
+        foreach ($context['_seq'] as $context["_key"] => $context["customField"]) {
+            // line 203
+            yield "                        <p>
+                          ";
+            // line 204
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["customField"], "name", [], "any", false, false, false, 204), "html", null, true);
+            yield " : ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["customField"], "description", [], "any", false, false, false, 204), "html", null, true);
+            yield "
+                        </p>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['customField'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 207
+        yield "
                     <div class=\"d-flex align-items-center\">
                        
                             <a href=\"";
-        // line 204
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 204, $this->source); })()), "id", [], "any", false, false, false, 204)]), "html", null, true);
+        // line 210
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 210, $this->source); })()), "id", [], "any", false, false, false, 210)]), "html", null, true);
         yield "\" class=\"btn btn-link btn-sm btn-rounded\">Edit</a>
                       
 
                         <!-- Delete button with modal trigger -->
                         <button type=\"button\" class=\"btn btn-danger btn-sm btn-rounded\" data-bs-toggle=\"modal\" data-bs-target=\"#deleteModal";
-        // line 208
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 208, $this->source); })()), "id", [], "any", false, false, false, 208), "html", null, true);
+        // line 214
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 214, $this->source); })()), "id", [], "any", false, false, false, 214), "html", null, true);
         yield "\">
                             Delete
                         </button>
                     </div>
 
+                    
+
+
+
                     <!-- Delete Confirmation Modal -->
                     <div class=\"modal fade\" id=\"deleteModal";
-        // line 214
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 214, $this->source); })()), "id", [], "any", false, false, false, 214), "html", null, true);
+        // line 224
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 224, $this->source); })()), "id", [], "any", false, false, false, 224), "html", null, true);
         yield "\" tabindex=\"-1\" aria-labelledby=\"deleteModalLabel";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 214, $this->source); })()), "id", [], "any", false, false, false, 214), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 224, $this->source); })()), "id", [], "any", false, false, false, 224), "html", null, true);
         yield "\" aria-hidden=\"true\">
                         <div class=\"modal-dialog modal-dialog-centered\">
                             <div class=\"modal-content\">
                                 <!-- Modal Header -->
                                 <div class=\"modal-header\">
                                     <h5 class=\"modal-title\" id=\"deleteModalLabel";
-        // line 219
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 219, $this->source); })()), "id", [], "any", false, false, false, 219), "html", null, true);
+        // line 229
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 229, $this->source); })()), "id", [], "any", false, false, false, 229), "html", null, true);
         yield "\">Confirm Deletion</h5>
                                     <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
                                 </div>
@@ -263,12 +288,12 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                                 <div class=\"modal-footer\">
                                     <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button>
                                     <form method=\"post\" action=\"";
-        // line 229
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 229, $this->source); })()), "id", [], "any", false, false, false, 229)]), "html", null, true);
+        // line 239
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 239, $this->source); })()), "id", [], "any", false, false, false, 239)]), "html", null, true);
         yield "\">
                                         <input type=\"hidden\" name=\"_token\" value=\"";
-        // line 230
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 230, $this->source); })()), "id", [], "any", false, false, false, 230))), "html", null, true);
+        // line 240
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 240, $this->source); })()), "id", [], "any", false, false, false, 240))), "html", null, true);
         yield "\">
                                         <button type=\"submit\" class=\"btn btn-danger\">Delete</button>
                                     </form>
@@ -299,7 +324,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
 
                <div class=\"container\">
                 ";
-        // line 259
+        // line 269
         yield Twig\Extension\CoreExtension::include($this->env, $context, "contact/_fieldsform.html.twig");
         yield "
               </div>
@@ -331,9 +356,9 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
 <script type=\"text/javascript\" src=\"js/script.js\"></script>
 
 ";
-        // line 288
+        // line 298
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
-        // line 289
+        // line 299
         yield "</body>
 </html>
 
@@ -488,7 +513,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
         yield from [];
     }
 
-    // line 288
+    // line 298
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -531,7 +556,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  492 => 288,  435 => 113,  425 => 106,  415 => 98,  402 => 97,  380 => 19,  357 => 7,  337 => 289,  335 => 288,  303 => 259,  271 => 230,  267 => 229,  254 => 219,  244 => 214,  235 => 208,  228 => 204,  221 => 200,  217 => 199,  213 => 198,  206 => 196,  192 => 185,  177 => 173,  161 => 159,  159 => 97,  138 => 79,  77 => 20,  75 => 19,  60 => 7,  52 => 1,);
+        return array (  517 => 298,  460 => 113,  450 => 106,  440 => 98,  427 => 97,  405 => 19,  382 => 7,  362 => 299,  360 => 298,  328 => 269,  296 => 240,  292 => 239,  279 => 229,  269 => 224,  256 => 214,  249 => 210,  244 => 207,  233 => 204,  230 => 203,  226 => 202,  221 => 200,  217 => 199,  213 => 198,  206 => 196,  192 => 185,  177 => 173,  161 => 159,  159 => 97,  138 => 79,  77 => 20,  75 => 19,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -737,6 +762,12 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                     <p>{{ contact.email }}</p>
                     <p>{{ contact.customFields ? contact.customFields|json_encode : '' }}</p>
 
+                    {% for customField in contact.fieldsCustom %}
+                        <p>
+                          {{ customField.name }} : {{ customField.description }}
+                        </p>
+                    {% endfor %}
+
                     <div class=\"d-flex align-items-center\">
                        
                             <a href=\"{{ path('contact_edit', { 'id': contact.id }) }}\" class=\"btn btn-link btn-sm btn-rounded\">Edit</a>
@@ -747,6 +778,10 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                             Delete
                         </button>
                     </div>
+
+                    
+
+
 
                     <!-- Delete Confirmation Modal -->
                     <div class=\"modal fade\" id=\"deleteModal{{ contact.id }}\" tabindex=\"-1\" aria-labelledby=\"deleteModalLabel{{ contact.id }}\" aria-hidden=\"true\">
