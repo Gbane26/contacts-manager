@@ -72,19 +72,6 @@ class ContactType extends AbstractType
                     'for' => 'contact_photo',
                 ],
             ])
-            // ->add('customFields', TextareaType::class, [
-            //     'required' => false,
-            //     'attr' => [
-            //         'class' => 'form-control',
-            //         'id' => 'contact_customFields',
-            //         'rows' => 4,
-            //         'placeholder' => 'JSON format for additional fields',
-            //     ],
-            //     'label_attr' => [
-            //         'class' => 'form-label',
-            //         'for' => 'contact_customFields',
-            //     ],
-            // ])
             ->add('groupName', EntityType::class, [
                 'class' => Group::class,
                 'choice_label' => 'name',
