@@ -112,9 +112,6 @@ class ContactType extends AbstractType
                 $group = new Group();
                 $group->setName($newGroup);
 
-                // Si vous utilisez un gestionnaire d'entités, persistez le groupe ici
-                // Exemple: $this->entityManager->persist($group);
-
                 // Associez le contact au nouveau groupe
                 $data->setGroupName($group);
             }

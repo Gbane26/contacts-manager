@@ -30,7 +30,9 @@
         {{ form_row(form.groupName) }}
     </div>
     <div class="col">
-        {{ form_row(form.newGroup) }}
+        {{ form_label(form.newGroup) }}
+        {{ form_widget(form.newGroup, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.newGroup) }}
     </div>
 </div>
 
