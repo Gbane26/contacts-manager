@@ -140,7 +140,7 @@ class __TwigTemplate_0c21b4dbe9e854aff342609fe370f67f extends Template
                                                         <h5 class=\"modal-title\" id=\"deleteModalLabel";
             // line 50
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 50), "html", null, true);
-            yield "\">Confirm Deletion</h5>
+            yield "\">Confirmation</h5>
                                                         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
                                                     </div>
                                                     <!-- Modal Body -->
@@ -268,7 +268,7 @@ class __TwigTemplate_0c21b4dbe9e854aff342609fe370f67f extends Template
                                                 <div class=\"modal-content\">
                                                     <!-- Modal Header -->
                                                     <div class=\"modal-header\">
-                                                        <h5 class=\"modal-title\" id=\"deleteModalLabel{{ contact.id }}\">Confirm Deletion</h5>
+                                                        <h5 class=\"modal-title\" id=\"deleteModalLabel{{ contact.id }}\">Confirmation</h5>
                                                         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
                                                     </div>
                                                     <!-- Modal Body -->

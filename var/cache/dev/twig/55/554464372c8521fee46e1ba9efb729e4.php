@@ -175,7 +175,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                 <img src=\"";
         // line 173
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/photos/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 173, $this->source); })()), "photo", [], "any", false, false, false, 173))), "html", null, true);
-        yield "\" class=\"img-fluid\" alt=\"Contact image\" />
+        yield "\" class=\"img-fluid\" alt=\"Contact image\" style=\"width: 400px;\"/>
 
             </div>
             <!--Grid column-->
@@ -277,12 +277,12 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                                     <h5 class=\"modal-title\" id=\"deleteModalLabel";
         // line 229
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 229, $this->source); })()), "id", [], "any", false, false, false, 229), "html", null, true);
-        yield "\">Confirm Deletion</h5>
+        yield "\">Confirmation</h5>
                                     <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
                                 </div>
                                 <!-- Modal Body -->
                                 <div class=\"modal-body\">
-                                    Are you sure you want to delete this contact?
+                                    Etes vous sure de vouloir supprimer ce contact?
                                 </div>
                                 <!-- Modal Footer -->
                                 <div class=\"modal-footer\">
@@ -733,7 +733,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
         <div class=\"row\">
             <!--Grid column-->
             <div class=\"col-md-6 mb-4\">
-                <img src=\"{{ asset('uploads/photos/' ~ contact.photo) }}\" class=\"img-fluid\" alt=\"Contact image\" />
+                <img src=\"{{ asset('uploads/photos/' ~ contact.photo) }}\" class=\"img-fluid\" alt=\"Contact image\" style=\"width: 400px;\"/>
 
             </div>
             <!--Grid column-->
@@ -789,12 +789,12 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                             <div class=\"modal-content\">
                                 <!-- Modal Header -->
                                 <div class=\"modal-header\">
-                                    <h5 class=\"modal-title\" id=\"deleteModalLabel{{ contact.id }}\">Confirm Deletion</h5>
+                                    <h5 class=\"modal-title\" id=\"deleteModalLabel{{ contact.id }}\">Confirmation</h5>
                                     <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
                                 </div>
                                 <!-- Modal Body -->
                                 <div class=\"modal-body\">
-                                    Are you sure you want to delete this contact?
+                                    Etes vous sure de vouloir supprimer ce contact?
                                 </div>
                                 <!-- Modal Footer -->
                                 <div class=\"modal-footer\">

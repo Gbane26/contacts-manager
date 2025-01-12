@@ -298,7 +298,10 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                                                             <div class=\"d-flex justify-content-between align-items-center\">
                                                                 <div class=\"d-flex align-items-center\">
                                                                     <img
-                                                                        src=\"https://mdbootstrap.com/img/new/avatars/8.jpg\"
+                                                                        src=\"";
+                        // line 208
+                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/photos/" . CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "photo", [], "any", false, false, false, 208))), "html", null, true);
+                        yield "\"
                                                                         alt=\"\"
                                                                         style=\"width: 45px; height: 45px\"
                                                                         class=\"rounded-circle\"
@@ -316,7 +319,10 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                         yield "</p>
                                                                     </div>
                                                                 </div>
-                                                                <span class=\"badge rounded-pill badge-success\">Active</span>
+                                                                <span class=\"badge rounded-pill badge-success\" onclick=\"window.location.href='";
+                        // line 218
+                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 218)]), "html", null, true);
+                        yield "'\" style=\"cursor: pointer;\">Voir</span>
                                                             </div>
                                                         </div>
                                                         <div class=\"card-footer border-0 bg-body-tertiary p-2 d-flex justify-content-around\">
@@ -583,7 +589,7 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  544 => 265,  487 => 112,  477 => 105,  467 => 97,  454 => 96,  432 => 18,  409 => 7,  396 => 266,  394 => 265,  371 => 244,  367 => 242,  361 => 238,  345 => 235,  341 => 233,  338 => 232,  315 => 215,  309 => 214,  295 => 202,  290 => 201,  288 => 200,  282 => 197,  277 => 195,  270 => 194,  253 => 193,  245 => 187,  227 => 183,  223 => 182,  219 => 181,  214 => 179,  209 => 177,  202 => 176,  185 => 175,  179 => 171,  177 => 170,  163 => 158,  161 => 96,  140 => 78,  127 => 68,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  550 => 265,  493 => 112,  483 => 105,  473 => 97,  460 => 96,  438 => 18,  415 => 7,  402 => 266,  400 => 265,  377 => 244,  373 => 242,  367 => 238,  351 => 235,  347 => 233,  344 => 232,  324 => 218,  318 => 215,  312 => 214,  303 => 208,  295 => 202,  290 => 201,  288 => 200,  282 => 197,  277 => 195,  270 => 194,  253 => 193,  245 => 187,  227 => 183,  223 => 182,  219 => 181,  214 => 179,  209 => 177,  202 => 176,  185 => 175,  179 => 171,  177 => 170,  163 => 158,  161 => 96,  140 => 78,  127 => 68,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -795,7 +801,7 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                                                             <div class=\"d-flex justify-content-between align-items-center\">
                                                                 <div class=\"d-flex align-items-center\">
                                                                     <img
-                                                                        src=\"https://mdbootstrap.com/img/new/avatars/8.jpg\"
+                                                                        src=\"{{ asset('uploads/photos/' ~ contact.photo) }}\"
                                                                         alt=\"\"
                                                                         style=\"width: 45px; height: 45px\"
                                                                         class=\"rounded-circle\"
@@ -805,7 +811,7 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                                                                         <p class=\"text-muted mb-0\">{{ contact.email }}</p>
                                                                     </div>
                                                                 </div>
-                                                                <span class=\"badge rounded-pill badge-success\">Active</span>
+                                                                <span class=\"badge rounded-pill badge-success\" onclick=\"window.location.href='{{ path('contact_show', { 'id': contact.id }) }}'\" style=\"cursor: pointer;\">Voir</span>
                                                             </div>
                                                         </div>
                                                         <div class=\"card-footer border-0 bg-body-tertiary p-2 d-flex justify-content-around\">

@@ -65,7 +65,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a class="navbar-brand nav-link" target="_blank" href="index.html">
+      <a class="navbar-brand nav-link"  href="{{ path('app_contact_index') }}">
         <strong>Contacts</strong>
       </a>
       <button class="navbar-toggler" type="button" data-mdb-collapse-init data-mdb-target="#navbarExample01"
@@ -101,7 +101,7 @@
               <h1 class="mb-3">Modification de votre contact</h1>
               <a
                  class="btn btn-outline-light btn-lg m-2" data-mdb-ripple-init
-                 href="{{ path('app_contact_index') }}"
+                 href="{{ path('app_group_index') }}"
                  role="button"
                  rel="nofollow"
                  >Retour à la liste</a
@@ -118,7 +118,7 @@
 </header>
 <!--Main Navigation-->
 
-<!--Main layout <a href="{{ path('app_contact_index') }}">back to list</a>-->
+<!--Main layout <a href="{{ path('app_group_index') }}">back to list</a>-->
 <main class="mt-5">
   <div class="container">
     {{ include('group/_form.html.twig', {'button_label': 'Update'}) }}

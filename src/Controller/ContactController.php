@@ -147,25 +147,4 @@ final class ContactController extends AbstractController
         return $this->redirectToRoute('app_contact_index');
     }
     
-
-
-    #[Route('/contact/search', name: 'contact_search')]
-    public function search(Request $request, EntityManagerInterface $entityManager)
-    {
-        $query = $request->query->get('q', '');
-
-        $contacts = $entityManager->getRepository(Contact::class)->createQueryBuilder('c')
-            ->where('c.firstName LIKE :query')
-            ->orWhere('c.lastName LIKE :query')
-            ->orWhere('c.phoneNumber LIKE :query')
-            ->orWhere('JSON_CONTAINS(c.customFields, :query) = 1')
-            ->setParameter('query', '%' . $query . '%')
-            ->getQuery()
-            ->getResult();
-
-        return $this->render('contact/search.html.twig', [
-            'contacts' => $contacts,
-            'query' => $query,
-        ]);
-    }
 }

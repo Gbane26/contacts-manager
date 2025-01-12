@@ -21,25 +21,6 @@ final class GroupController extends AbstractController{
         ]);
     }
 
-    #[Route('/new', name: 'app_group_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
-    {
-        $group = new Group();
-        $form = $this->createForm(GroupType::class, $group);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($group);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_group_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->render('group/new.html.twig', [
-            'group' => $group,
-            'form' => $form,
-        ]);
-    }
 
     #[Route('/{id}', name: 'app_group_show', methods: ['GET'])]
     public function show(Group $group): Response

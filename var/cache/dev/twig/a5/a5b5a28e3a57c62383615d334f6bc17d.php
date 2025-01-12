@@ -122,7 +122,10 @@ class __TwigTemplate_0323555db924452b0c8e821d4e2a9809 extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\"  href=\"";
+        // line 68
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield "\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"
@@ -165,7 +168,7 @@ class __TwigTemplate_0323555db924452b0c8e821d4e2a9809 extends Template
 
 <!--Main layout <a href=\"";
         // line 121
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_group_index");
         yield "\">back to list</a>-->
 <main class=\"mt-5\">
   <div class=\"container\">
@@ -275,7 +278,7 @@ class __TwigTemplate_0323555db924452b0c8e821d4e2a9809 extends Template
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
                  href=\"";
         // line 104
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_group_index");
         yield "\"
                  role=\"button\"
                  rel=\"nofollow\"
@@ -338,7 +341,7 @@ class __TwigTemplate_0323555db924452b0c8e821d4e2a9809 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  299 => 142,  278 => 104,  268 => 96,  255 => 95,  233 => 18,  210 => 7,  197 => 143,  195 => 142,  174 => 124,  168 => 121,  159 => 114,  157 => 95,  137 => 78,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  302 => 142,  281 => 104,  271 => 96,  258 => 95,  236 => 18,  213 => 7,  200 => 143,  198 => 142,  177 => 124,  171 => 121,  162 => 114,  160 => 95,  140 => 78,  127 => 68,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -410,7 +413,7 @@ class __TwigTemplate_0323555db924452b0c8e821d4e2a9809 extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\"  href=\"{{ path('app_contact_index') }}\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"
@@ -446,7 +449,7 @@ class __TwigTemplate_0323555db924452b0c8e821d4e2a9809 extends Template
               <h1 class=\"mb-3\">Modification de votre contact</h1>
               <a
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"{{ path('app_contact_index') }}\"
+                 href=\"{{ path('app_group_index') }}\"
                  role=\"button\"
                  rel=\"nofollow\"
                  >Retour à la liste</a
@@ -463,7 +466,7 @@ class __TwigTemplate_0323555db924452b0c8e821d4e2a9809 extends Template
 </header>
 <!--Main Navigation-->
 
-<!--Main layout <a href=\"{{ path('app_contact_index') }}\">back to list</a>-->
+<!--Main layout <a href=\"{{ path('app_group_index') }}\">back to list</a>-->
 <main class=\"mt-5\">
   <div class=\"container\">
     {{ include('group/_form.html.twig', {'button_label': 'Update'}) }}

@@ -122,7 +122,10 @@ class __TwigTemplate_df86231914195008c1e16165f859e509 extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\"  href=\"";
+        // line 68
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield "\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"
@@ -338,7 +341,7 @@ class __TwigTemplate_df86231914195008c1e16165f859e509 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  299 => 142,  278 => 104,  268 => 96,  255 => 95,  233 => 18,  210 => 7,  197 => 143,  195 => 142,  174 => 124,  168 => 121,  159 => 114,  157 => 95,  137 => 78,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  302 => 142,  281 => 104,  271 => 96,  258 => 95,  236 => 18,  213 => 7,  200 => 143,  198 => 142,  177 => 124,  171 => 121,  162 => 114,  160 => 95,  140 => 78,  127 => 68,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -410,7 +413,7 @@ class __TwigTemplate_df86231914195008c1e16165f859e509 extends Template
   <nav class=\"navbar navbar-expand-lg navbar-dark d-none d-lg-block\" style=\"z-index: 2000;\">
     <div class=\"container-fluid\">
       <!-- Navbar brand -->
-      <a class=\"navbar-brand nav-link\" target=\"_blank\" href=\"index.html\">
+      <a class=\"navbar-brand nav-link\"  href=\"{{ path('app_contact_index') }}\">
         <strong>Contacts</strong>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-mdb-collapse-init data-mdb-target=\"#navbarExample01\"

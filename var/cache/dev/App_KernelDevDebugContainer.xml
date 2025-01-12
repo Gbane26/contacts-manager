@@ -420,7 +420,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.KC_tx9a"/>
+      <argument type="service" id=".service_locator.oCZ2L94"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3366,7 +3366,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.KC_tx9a"/>
+      <argument type="service" id=".service_locator.oCZ2L94"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7821,12 +7821,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.G5VbT8f" method="withContext"/>
     </service>
-    <service id=".service_locator.egipcEH.App\Controller\ContactController::search()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ContactController::search()"/>
-      <argument>App\Controller\ContactController::search()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.egipcEH" method="withContext"/>
-    </service>
     <service id=".service_locator.2XaVhYa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7838,12 +7832,6 @@
       <argument>App\Controller\GroupController::index()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.2XaVhYa" method="withContext"/>
-    </service>
-    <service id=".service_locator.egipcEH.App\Controller\GroupController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\GroupController::new()"/>
-      <argument>App\Controller\GroupController::new()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.egipcEH" method="withContext"/>
     </service>
     <service id=".service_locator.FobyIDP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -7876,7 +7864,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.9PXtK08" method="withContext"/>
     </service>
-    <service id=".service_locator.KC_tx9a" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.oCZ2L94" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -7888,9 +7876,7 @@
         <argument key="App\Controller\ContactController::show" type="service_closure" id=".service_locator.YSadlPJ.App\Controller\ContactController::show()"/>
         <argument key="App\Controller\ContactController::edit" type="service_closure" id=".service_locator.G5VbT8f.App\Controller\ContactController::edit()"/>
         <argument key="App\Controller\ContactController::delete" type="service_closure" id=".service_locator.G5VbT8f.App\Controller\ContactController::delete()"/>
-        <argument key="App\Controller\ContactController::search" type="service_closure" id=".service_locator.egipcEH.App\Controller\ContactController::search()"/>
         <argument key="App\Controller\GroupController::index" type="service_closure" id=".service_locator.2XaVhYa.App\Controller\GroupController::index()"/>
-        <argument key="App\Controller\GroupController::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\GroupController::new()"/>
         <argument key="App\Controller\GroupController::show" type="service_closure" id=".service_locator.FobyIDP.App\Controller\GroupController::show()"/>
         <argument key="App\Controller\GroupController::edit" type="service_closure" id=".service_locator.9PXtK08.App\Controller\GroupController::edit()"/>
         <argument key="App\Controller\GroupController::delete" type="service_closure" id=".service_locator.9PXtK08.App\Controller\GroupController::delete()"/>
@@ -7901,9 +7887,7 @@
         <argument key="App\Controller\ContactController:show" type="service_closure" id=".service_locator.YSadlPJ.App\Controller\ContactController::show()"/>
         <argument key="App\Controller\ContactController:edit" type="service_closure" id=".service_locator.G5VbT8f.App\Controller\ContactController::edit()"/>
         <argument key="App\Controller\ContactController:delete" type="service_closure" id=".service_locator.G5VbT8f.App\Controller\ContactController::delete()"/>
-        <argument key="App\Controller\ContactController:search" type="service_closure" id=".service_locator.egipcEH.App\Controller\ContactController::search()"/>
         <argument key="App\Controller\GroupController:index" type="service_closure" id=".service_locator.2XaVhYa.App\Controller\GroupController::index()"/>
-        <argument key="App\Controller\GroupController:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\GroupController::new()"/>
         <argument key="App\Controller\GroupController:show" type="service_closure" id=".service_locator.FobyIDP.App\Controller\GroupController::show()"/>
         <argument key="App\Controller\GroupController:edit" type="service_closure" id=".service_locator.9PXtK08.App\Controller\GroupController::edit()"/>
         <argument key="App\Controller\GroupController:delete" type="service_closure" id=".service_locator.9PXtK08.App\Controller\GroupController::delete()"/>
@@ -10083,7 +10067,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.KC_tx9a"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.oCZ2L94"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

@@ -170,7 +170,7 @@
         <div class="row">
             <!--Grid column-->
             <div class="col-md-6 mb-4">
-                <img src="{{ asset('uploads/photos/' ~ contact.photo) }}" class="img-fluid" alt="Contact image" />
+                <img src="{{ asset('uploads/photos/' ~ contact.photo) }}" class="img-fluid" alt="Contact image" style="width: 400px;"/>
 
             </div>
             <!--Grid column-->
@@ -226,12 +226,12 @@
                             <div class="modal-content">
                                 <!-- Modal Header -->
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="deleteModalLabel{{ contact.id }}">Confirm Deletion</h5>
+                                    <h5 class="modal-title" id="deleteModalLabel{{ contact.id }}">Confirmation</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <!-- Modal Body -->
                                 <div class="modal-body">
-                                    Are you sure you want to delete this contact?
+                                    Etes vous sure de vouloir supprimer ce contact?
                                 </div>
                                 <!-- Modal Footer -->
                                 <div class="modal-footer">
