@@ -219,7 +219,12 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                 // line 182
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["group"], "name", [], "any", false, false, false, 182), "html", null, true);
                 yield "
+                                     <span class=\"badge rounded-pill badge-success\" onclick=\"window.location.href='/group/";
+                // line 183
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["group"], "id", [], "any", false, false, false, 183), "html", null, true);
+                yield "/edit'\" style=\"cursor: pointer;\">Modifier</span>
                                 </a>
+                                
                             ";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -233,7 +238,7 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['group'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 185
+            // line 187
             yield "                        </div>
                     </div>
 
@@ -241,9 +246,9 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                     <div class=\"col-8\">
                         <div class=\"tab-content\" id=\"nav-tabContent\">
                             ";
-            // line 191
+            // line 193
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["groups"]) || array_key_exists("groups", $context) ? $context["groups"] : (function () { throw new RuntimeError('Variable "groups" does not exist.', 191, $this->source); })()));
+            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["groups"]) || array_key_exists("groups", $context) ? $context["groups"] : (function () { throw new RuntimeError('Variable "groups" does not exist.', 193, $this->source); })()));
             $context['loop'] = [
               'parent' => $context['_parent'],
               'index0' => 0,
@@ -258,32 +263,32 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["group"]) {
-                // line 192
+                // line 194
                 yield "                                <div class=\"tab-pane fade ";
-                if (CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 192)) {
+                if (CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 194)) {
                     yield "show active";
                 }
                 yield "\" 
                                     id=\"list-";
-                // line 193
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["group"], "id", [], "any", false, false, false, 193), "html", null, true);
+                // line 195
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["group"], "id", [], "any", false, false, false, 195), "html", null, true);
                 yield "\" 
                                     role=\"tabpanel\" 
                                     aria-labelledby=\"list-";
-                // line 195
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["group"], "id", [], "any", false, false, false, 195), "html", null, true);
+                // line 197
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["group"], "id", [], "any", false, false, false, 197), "html", null, true);
                 yield "-list\">
                                     <div class=\"row\">
                                         <!-- Vérifier si le groupe contient des contacts -->
                                         ";
-                // line 198
-                if (CoreExtension::getAttribute($this->env, $this->source, $context["group"], "contacts", [], "any", false, false, false, 198)) {
-                    // line 199
+                // line 200
+                if (CoreExtension::getAttribute($this->env, $this->source, $context["group"], "contacts", [], "any", false, false, false, 200)) {
+                    // line 201
                     yield "                                            ";
                     $context['_parent'] = $context;
-                    $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["group"], "contacts", [], "any", false, false, false, 199));
+                    $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["group"], "contacts", [], "any", false, false, false, 201));
                     foreach ($context['_seq'] as $context["_key"] => $context["contact"]) {
-                        // line 200
+                        // line 202
                         yield "                                                <div class=\"col-xl-6 mb-4\">
                                                     <div class=\"card\">
                                                         <div class=\"card-body\">
@@ -297,14 +302,14 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                                                                     />
                                                                     <div class=\"ms-3\">
                                                                         <p class=\"fw-bold mb-1\">";
-                        // line 212
-                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "firstName", [], "any", false, false, false, 212), "html", null, true);
+                        // line 214
+                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "firstName", [], "any", false, false, false, 214), "html", null, true);
                         yield " ";
-                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "lastName", [], "any", false, false, false, 212), "html", null, true);
+                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "lastName", [], "any", false, false, false, 214), "html", null, true);
                         yield "</p>
                                                                         <p class=\"text-muted mb-0\">";
-                        // line 213
-                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "email", [], "any", false, false, false, 213), "html", null, true);
+                        // line 215
+                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "email", [], "any", false, false, false, 215), "html", null, true);
                         yield "</p>
                                                                     </div>
                                                                 </div>
@@ -326,14 +331,14 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_key'], $context['contact'], $context['_parent']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 230
+                    // line 232
                     yield "                                        ";
                 } else {
-                    // line 231
+                    // line 233
                     yield "                                            <p>Aucun contact disponible pour ce groupe</p>
                                         ";
                 }
-                // line 233
+                // line 235
                 yield "                                    </div>
                                 </div>
                             ";
@@ -349,17 +354,17 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['group'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 236
+            // line 238
             yield "                        </div>
                     </div>
                 </div>
             ";
         } else {
-            // line 240
+            // line 242
             yield "                <p>Aucun groupe disponible</p>
             ";
         }
-        // line 242
+        // line 244
         yield "        </div>
 
     </div>
@@ -382,9 +387,9 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
     <!-- Custom scripts -->
 <script type=\"text/javascript\" src=\"js/script.js\"></script>
 ";
-        // line 263
+        // line 265
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
-        // line 264
+        // line 266
         yield "</body>
 </html>
 ";
@@ -532,7 +537,7 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
         yield from [];
     }
 
-    // line 263
+    // line 265
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -575,7 +580,7 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  536 => 263,  479 => 112,  469 => 105,  459 => 97,  446 => 96,  424 => 18,  401 => 7,  388 => 264,  386 => 263,  363 => 242,  359 => 240,  353 => 236,  337 => 233,  333 => 231,  330 => 230,  307 => 213,  301 => 212,  287 => 200,  282 => 199,  280 => 198,  274 => 195,  269 => 193,  262 => 192,  245 => 191,  237 => 185,  220 => 182,  216 => 181,  211 => 179,  206 => 177,  199 => 176,  182 => 175,  176 => 171,  174 => 170,  160 => 158,  158 => 96,  137 => 78,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  541 => 265,  484 => 112,  474 => 105,  464 => 97,  451 => 96,  429 => 18,  406 => 7,  393 => 266,  391 => 265,  368 => 244,  364 => 242,  358 => 238,  342 => 235,  338 => 233,  335 => 232,  312 => 215,  306 => 214,  292 => 202,  287 => 201,  285 => 200,  279 => 197,  274 => 195,  267 => 194,  250 => 193,  242 => 187,  224 => 183,  220 => 182,  216 => 181,  211 => 179,  206 => 177,  199 => 176,  182 => 175,  176 => 171,  174 => 170,  160 => 158,  158 => 96,  137 => 78,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -762,7 +767,9 @@ class __TwigTemplate_c4c005c90adf8055e4f55a80420a7742 extends Template
                                     role=\"tab\"
                                     aria-controls=\"list-{{ group.id }}\">
                                     {{ group.name }}
+                                     <span class=\"badge rounded-pill badge-success\" onclick=\"window.location.href='/group/{{ group.id }}/edit'\" style=\"cursor: pointer;\">Modifier</span>
                                 </a>
+                                
                             {% endfor %}
                         </div>
                     </div>

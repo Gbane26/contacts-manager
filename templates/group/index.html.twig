@@ -180,7 +180,9 @@
                                     role="tab"
                                     aria-controls="list-{{ group.id }}">
                                     {{ group.name }}
+                                     <span class="badge rounded-pill badge-success" onclick="window.location.href='/group/{{ group.id }}/edit'" style="cursor: pointer;">Modifier</span>
                                 </a>
+                                
                             {% endfor %}
                         </div>
                     </div>
