@@ -132,7 +132,10 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
       <div class=\"collapse navbar-collapse\" id=\"navbarExample01\">
         <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
           <li class=\"nav-item active\">
-            <a class=\"nav-link\" aria-current=\"page\" href=\"index.html\">Accueil</a>
+            <a class=\"nav-link\" aria-current=\"page\" href=\"";
+        // line 78
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield "\">Accueil</a>
           </li>
         </ul>
 
@@ -388,7 +391,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  349 => 198,  285 => 115,  275 => 107,  262 => 106,  240 => 18,  217 => 7,  204 => 199,  202 => 198,  181 => 179,  179 => 178,  167 => 168,  165 => 106,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  352 => 198,  288 => 115,  278 => 107,  265 => 106,  243 => 18,  220 => 7,  207 => 199,  205 => 198,  184 => 179,  182 => 178,  170 => 168,  168 => 106,  137 => 78,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -470,7 +473,7 @@ class __TwigTemplate_d9dca99c3f94092b2de65a232aafd4c3 extends Template
       <div class=\"collapse navbar-collapse\" id=\"navbarExample01\">
         <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
           <li class=\"nav-item active\">
-            <a class=\"nav-link\" aria-current=\"page\" href=\"index.html\">Accueil</a>
+            <a class=\"nav-link\" aria-current=\"page\" href=\"{{ path('app_contact_index') }}\">Accueil</a>
           </li>
         </ul>
 

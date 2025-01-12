@@ -91,18 +91,26 @@ class __TwigTemplate_077da8bdce9eacf11f0c484dd544f0c2 extends Template
         yield "
   </div>
 
-  <div class=\"mb-4\">
-    ";
-        // line 29
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 29, $this->source); })()), "groupName", [], "any", false, false, false, 29), 'row');
+ <div class=\"row mb-4\">
+    <div class=\"col\">
+        ";
+        // line 30
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 30, $this->source); })()), "groupName", [], "any", false, false, false, 30), 'row');
         yield "
-  </div> 
+    </div>
+    <div class=\"col\">
+        ";
+        // line 33
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 33, $this->source); })()), "newGroup", [], "any", false, false, false, 33), 'row');
+        yield "
+    </div>
+</div>
 
   <button data-mdb-ripple-init type=\"submit\" class=\"btn btn-primary btn-block mb-4\">Save</button>
 
 ";
-        // line 34
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 34, $this->source); })()), 'form_end');
+        // line 39
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 39, $this->source); })()), 'form_end');
         yield "
 ";
         
@@ -135,7 +143,7 @@ class __TwigTemplate_077da8bdce9eacf11f0c484dd544f0c2 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  105 => 34,  97 => 29,  90 => 25,  83 => 21,  76 => 17,  69 => 13,  61 => 8,  55 => 5,  48 => 1,);
+        return array (  113 => 39,  104 => 33,  98 => 30,  90 => 25,  83 => 21,  76 => 17,  69 => 13,  61 => 8,  55 => 5,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -167,9 +175,14 @@ class __TwigTemplate_077da8bdce9eacf11f0c484dd544f0c2 extends Template
     {{ form_row(form.customFields) }}
   </div>
 
-  <div class=\"mb-4\">
-    {{ form_row(form.groupName) }}
-  </div> 
+ <div class=\"row mb-4\">
+    <div class=\"col\">
+        {{ form_row(form.groupName) }}
+    </div>
+    <div class=\"col\">
+        {{ form_row(form.newGroup) }}
+    </div>
+</div>
 
   <button data-mdb-ripple-init type=\"submit\" class=\"btn btn-primary btn-block mb-4\">Save</button>
 

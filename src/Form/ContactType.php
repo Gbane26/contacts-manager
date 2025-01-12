@@ -8,7 +8,10 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ContactType extends AbstractType
@@ -86,16 +89,36 @@ class ContactType extends AbstractType
                 'class' => Group::class,
                 'choice_label' => 'name',
                 'required' => false,
-                'attr' => [
-                    'class' => 'form-control',
-                    'id' => 'contact_groupName',
-                ],
-                'label_attr' => [
-                    'class' => 'form-label',
-                    'for' => 'contact_groupName',
-                ],
+                'placeholder' => 'Sélectionnez un groupe...',
+                'attr' => ['class' => 'form-control', 'id' => 'contact_groupName'],
+                'label_attr' => ['class' => 'form-label', 'for' => 'contact_groupName'],
+            ])
+            ->add('newGroup', TextType::class, [
+                'mapped' => false, // Champ non mappé directement à l'entité
+                'required' => false,
+                'attr' => ['class' => 'form-control', 'id' => 'contact_groupName', 'placeholder' => 'Ajouter un nouveau groupe'],
+                'label' => 'Ajouter un nouveau groupe',
+                'label_attr' => ['class' => 'form-label', 'for' => 'contact_groupName'],
             ]);
-            
+        // Gestion dynamique pour assigner le nouveau groupe s'il est saisi
+        $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) {
+            $form = $event->getForm();
+            $data = $event->getData();
+
+            // Récupération du champ 'newGroup'
+            $newGroup = $form->get('newGroup')->getData();
+            if (!empty($newGroup)) {
+                // Créez un nouveau groupe et assignez-le (le gestionnaire EntityManager est nécessaire ici)
+                $group = new Group();
+                $group->setName($newGroup);
+
+                // Si vous utilisez un gestionnaire d'entités, persistez le groupe ici
+                // Exemple: $this->entityManager->persist($group);
+
+                // Associez le contact au nouveau groupe
+                $data->setGroupName($group);
+            }
+        });
            
     }
 

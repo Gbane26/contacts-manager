@@ -133,18 +133,11 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
       <div class=\"collapse navbar-collapse\" id=\"navbarExample01\">
         <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
           <li class=\"nav-item active\">
-            <a class=\"nav-link\" aria-current=\"page\" href=\"index.html\">Accueil</a>
+            <a class=\"nav-link\" aria-current=\"page\" href=\"";
+        // line 79
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield "\">Accueil</a>
           </li>
-        </ul>
-
-        <ul class=\"navbar-nav d-flex flex-row\">
-            <!-- Search bar -->
-            <li class=\"nav-item me-3 me-lg-0\">
-              <input id=\"search-input\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
-            </li>
-            <li class=\"nav-item me-3 me-lg-0\">
-              <button id=\"search-btn\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"button\">Recherche</button>
-            </li>
         </ul>
       </div>
     </div>
@@ -162,9 +155,9 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
     <!-- Inner -->
     <div class=\"carousel-inner\">
       ";
-        // line 107
+        // line 97
         yield from $this->unwrap()->yieldBlock('carousel', $context, $blocks);
-        // line 169
+        // line 159
         yield "    </div>
     <!-- Inner -->
   </div>
@@ -180,8 +173,8 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
             <!--Grid column-->
             <div class=\"col-md-6 mb-4\">
                 <img src=\"";
-        // line 183
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/photos/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 183, $this->source); })()), "photo", [], "any", false, false, false, 183))), "html", null, true);
+        // line 173
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/photos/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 173, $this->source); })()), "photo", [], "any", false, false, false, 173))), "html", null, true);
         yield "\" class=\"img-fluid\" alt=\"Contact image\" />
 
             </div>
@@ -195,8 +188,8 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                     <div class=\"mb-3\">
                         <a href=\"\">
                             <span class=\"badge bg-dark me-1\">";
-        // line 195
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 195, $this->source); })()), "groupName", [], "any", false, false, false, 195), "name", [], "any", false, false, false, 195), "html", null, true);
+        // line 185
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 185, $this->source); })()), "groupName", [], "any", false, false, false, 185), "name", [], "any", false, false, false, 185), "html", null, true);
         yield "</span>
                         </a>
                         <a href=\"\">
@@ -209,37 +202,37 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
 
 
                     <strong><p style=\"font-size: 20px;\">";
-        // line 206
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 206, $this->source); })()), "firstName", [], "any", false, false, false, 206), "html", null, true);
+        // line 196
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 196, $this->source); })()), "firstName", [], "any", false, false, false, 196), "html", null, true);
         yield " ";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 206, $this->source); })()), "lastName", [], "any", false, false, false, 206), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 196, $this->source); })()), "lastName", [], "any", false, false, false, 196), "html", null, true);
         yield "</p></strong>
 
                     <p>";
-        // line 208
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 208, $this->source); })()), "phoneNumber", [], "any", false, false, false, 208), "html", null, true);
+        // line 198
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 198, $this->source); })()), "phoneNumber", [], "any", false, false, false, 198), "html", null, true);
         yield "</p>
                     <p>";
-        // line 209
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 209, $this->source); })()), "email", [], "any", false, false, false, 209), "html", null, true);
+        // line 199
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 199, $this->source); })()), "email", [], "any", false, false, false, 199), "html", null, true);
         yield "</p>
                     <p>";
-        // line 210
-        yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 210, $this->source); })()), "customFields", [], "any", false, false, false, 210)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(json_encode(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 210, $this->source); })()), "customFields", [], "any", false, false, false, 210)), "html", null, true)) : (""));
+        // line 200
+        yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 200, $this->source); })()), "customFields", [], "any", false, false, false, 200)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(json_encode(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 200, $this->source); })()), "customFields", [], "any", false, false, false, 200)), "html", null, true)) : (""));
         yield "</p>
 
                     <div class=\"d-flex align-items-center\">
                        
                             <a href=\"";
-        // line 214
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 214, $this->source); })()), "id", [], "any", false, false, false, 214)]), "html", null, true);
+        // line 204
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 204, $this->source); })()), "id", [], "any", false, false, false, 204)]), "html", null, true);
         yield "\" class=\"btn btn-link btn-sm btn-rounded\">Edit</a>
                       
 
                         <!-- Delete button with modal trigger -->
                         <button type=\"button\" class=\"btn btn-danger btn-sm btn-rounded\" data-bs-toggle=\"modal\" data-bs-target=\"#deleteModal";
-        // line 218
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 218, $this->source); })()), "id", [], "any", false, false, false, 218), "html", null, true);
+        // line 208
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 208, $this->source); })()), "id", [], "any", false, false, false, 208), "html", null, true);
         yield "\">
                             Delete
                         </button>
@@ -247,18 +240,18 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
 
                     <!-- Delete Confirmation Modal -->
                     <div class=\"modal fade\" id=\"deleteModal";
-        // line 224
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 224, $this->source); })()), "id", [], "any", false, false, false, 224), "html", null, true);
+        // line 214
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 214, $this->source); })()), "id", [], "any", false, false, false, 214), "html", null, true);
         yield "\" tabindex=\"-1\" aria-labelledby=\"deleteModalLabel";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 224, $this->source); })()), "id", [], "any", false, false, false, 224), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 214, $this->source); })()), "id", [], "any", false, false, false, 214), "html", null, true);
         yield "\" aria-hidden=\"true\">
                         <div class=\"modal-dialog modal-dialog-centered\">
                             <div class=\"modal-content\">
                                 <!-- Modal Header -->
                                 <div class=\"modal-header\">
                                     <h5 class=\"modal-title\" id=\"deleteModalLabel";
-        // line 229
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 229, $this->source); })()), "id", [], "any", false, false, false, 229), "html", null, true);
+        // line 219
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 219, $this->source); })()), "id", [], "any", false, false, false, 219), "html", null, true);
         yield "\">Confirm Deletion</h5>
                                     <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
                                 </div>
@@ -270,12 +263,12 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                                 <div class=\"modal-footer\">
                                     <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button>
                                     <form method=\"post\" action=\"";
-        // line 239
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 239, $this->source); })()), "id", [], "any", false, false, false, 239)]), "html", null, true);
+        // line 229
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 229, $this->source); })()), "id", [], "any", false, false, false, 229)]), "html", null, true);
         yield "\">
                                         <input type=\"hidden\" name=\"_token\" value=\"";
-        // line 240
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 240, $this->source); })()), "id", [], "any", false, false, false, 240))), "html", null, true);
+        // line 230
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 230, $this->source); })()), "id", [], "any", false, false, false, 230))), "html", null, true);
         yield "\">
                                         <button type=\"submit\" class=\"btn btn-danger\">Delete</button>
                                     </form>
@@ -353,9 +346,9 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
 <script type=\"text/javascript\" src=\"js/script.js\"></script>
 
 ";
-        // line 316
+        // line 306
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
-        // line 317
+        // line 307
         yield "</body>
 </html>
 
@@ -420,7 +413,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
         yield from [];
     }
 
-    // line 107
+    // line 97
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -433,7 +426,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "carousel"));
 
-        // line 108
+        // line 98
         yield "      <!-- Single item -->
       <div class=\"carousel-item active\">
         <div class=\"mask\" style=\"background-color: rgba(0, 0, 0, 0.6);\">
@@ -443,12 +436,12 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
               <a
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
                  href=\"";
-        // line 116
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_new");
+        // line 106
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
         yield "\"
                  role=\"button\"
                  rel=\"nofollow\"
-                 >Ajouter Contacts</a
+                 >Retour à la liste</a
                 >
               <a
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
@@ -507,7 +500,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
         yield from [];
     }
 
-    // line 316
+    // line 306
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -550,7 +543,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  511 => 316,  447 => 116,  437 => 108,  424 => 107,  402 => 19,  379 => 7,  359 => 317,  357 => 316,  278 => 240,  274 => 239,  261 => 229,  251 => 224,  242 => 218,  235 => 214,  228 => 210,  224 => 209,  220 => 208,  213 => 206,  199 => 195,  184 => 183,  168 => 169,  166 => 107,  77 => 20,  75 => 19,  60 => 7,  52 => 1,);
+        return array (  504 => 306,  440 => 106,  430 => 98,  417 => 97,  395 => 19,  372 => 7,  352 => 307,  350 => 306,  271 => 230,  267 => 229,  254 => 219,  244 => 214,  235 => 208,  228 => 204,  221 => 200,  217 => 199,  213 => 198,  206 => 196,  192 => 185,  177 => 173,  161 => 159,  159 => 97,  138 => 79,  77 => 20,  75 => 19,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -633,18 +626,8 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
       <div class=\"collapse navbar-collapse\" id=\"navbarExample01\">
         <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
           <li class=\"nav-item active\">
-            <a class=\"nav-link\" aria-current=\"page\" href=\"index.html\">Accueil</a>
+            <a class=\"nav-link\" aria-current=\"page\" href=\"{{ path('app_contact_index') }}\">Accueil</a>
           </li>
-        </ul>
-
-        <ul class=\"navbar-nav d-flex flex-row\">
-            <!-- Search bar -->
-            <li class=\"nav-item me-3 me-lg-0\">
-              <input id=\"search-input\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
-            </li>
-            <li class=\"nav-item me-3 me-lg-0\">
-              <button id=\"search-btn\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"button\">Recherche</button>
-            </li>
         </ul>
       </div>
     </div>
@@ -670,10 +653,10 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
               <h1 class=\"mb-3\">Bienvenue dans votre répertoire</h1>
               <a
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"{{ path('app_contact_new') }}\"
+                 href=\"{{ path('app_contact_index') }}\"
                  role=\"button\"
                  rel=\"nofollow\"
-                 >Ajouter Contacts</a
+                 >Retour à la liste</a
                 >
               <a
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init

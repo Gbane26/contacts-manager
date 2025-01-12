@@ -25,9 +25,14 @@
     {{ form_row(form.customFields) }}
   </div>
 
-  <div class="mb-4">
-    {{ form_row(form.groupName) }}
-  </div> 
+ <div class="row mb-4">
+    <div class="col">
+        {{ form_row(form.groupName) }}
+    </div>
+    <div class="col">
+        {{ form_row(form.newGroup) }}
+    </div>
+</div>
 
   <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Save</button>
 

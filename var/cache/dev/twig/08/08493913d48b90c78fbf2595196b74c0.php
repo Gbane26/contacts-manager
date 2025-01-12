@@ -106,7 +106,7 @@ class __TwigTemplate_0c21b4dbe9e854aff342609fe370f67f extends Template
                       <td>
                           <span class=\"badge badge-success rounded-pill d-inline\">";
             // line 41
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "groupName", [], "any", false, false, false, 41), "name", [], "any", false, false, false, 41), "html", null, true);
+            yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "groupName", [], "any", false, true, false, 41), "name", [], "any", true, true, false, 41) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "groupName", [], "any", false, true, false, 41), "name", [], "any", false, false, false, 41)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["contact"], "groupName", [], "any", false, true, false, 41), "name", [], "any", false, false, false, 41), "html", null, true)) : ("Aucun groupe associé"));
             yield "</span>
                       </td>
                       <td>";
@@ -268,7 +268,7 @@ class __TwigTemplate_0c21b4dbe9e854aff342609fe370f67f extends Template
                           <p class=\"text-muted mb-0\">IT department</p>
                       </td>
                       <td>
-                          <span class=\"badge badge-success rounded-pill d-inline\">{{ contact.groupName.name }}</span>
+                          <span class=\"badge badge-success rounded-pill d-inline\">{{ contact.groupName.name ?? 'Aucun groupe associé' }}</span>
                       </td>
                       <td>{{ contact.phoneNumber }}</td>
                       <td>

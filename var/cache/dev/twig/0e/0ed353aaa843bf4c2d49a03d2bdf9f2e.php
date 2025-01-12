@@ -132,7 +132,10 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
       <div class=\"collapse navbar-collapse\" id=\"navbarExample01\">
         <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
           <li class=\"nav-item active\">
-            <a class=\"nav-link\" aria-current=\"page\" href=\"index.html\">Accueil</a>
+            <a class=\"nav-link\" aria-current=\"page\" href=\"";
+        // line 78
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
+        yield "\">Accueil</a>
           </li>
         </ul>
 
@@ -155,15 +158,14 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
     <!-- Indicators -->
     <div class=\"carousel-indicators\">
       <li data-mdb-target=\"#introCarousel\" data-mdb-slide-to=\"0\" class=\"active\"></li>
-      <li data-mdb-target=\"#introCarousel\" data-mdb-slide-to=\"1\"></li>
     </div>
 
     <!-- Inner -->
     <div class=\"carousel-inner\">
       ";
-        // line 106
+        // line 105
         yield from $this->unwrap()->yieldBlock('carousel', $context, $blocks);
-        // line 168
+        // line 118
         yield "    </div>
     <!-- Inner -->
   </div>
@@ -172,13 +174,13 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
 <!--Main Navigation-->
 
 <!--Main layout <a href=\"";
-        // line 175
+        // line 125
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_index");
         yield "\">back to list</a>-->
 <main class=\"mt-5\">
   <div class=\"container\">
     ";
-        // line 178
+        // line 128
         yield Twig\Extension\CoreExtension::include($this->env, $context, "contact/_form.html.twig");
         yield "
   </div>
@@ -199,9 +201,9 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js\"></script>
     <!-- Custom scripts -->
 ";
-        // line 196
+        // line 146
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
-        // line 197
+        // line 147
         yield "</body>
 </html>
 ";
@@ -259,7 +261,7 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
         yield from [];
     }
 
-    // line 106
+    // line 105
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -272,66 +274,14 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "carousel"));
 
-        // line 107
+        // line 106
         yield "      <!-- Single item -->
       <div class=\"carousel-item active\">
         <div class=\"mask\" style=\"background-color: rgba(0, 0, 0, 0.6);\">
           <div class=\"d-flex justify-content-center align-items-center h-100\">
             <div class=\"text-white text-center\" data-mdb-theme=\"dark\">
-              <h1 class=\"mb-3\">Bienvenue dans votre répertoire</h1>
-              <a
-                 class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"";
-        // line 115
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact_new");
-        yield "\"
-                 role=\"button\"
-                 rel=\"nofollow\"
-                 >Ajouter Contacts</a
-                >
-              <a
-                 class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"#\"
-                 role=\"button\"
-                 >Groupes</a
-                >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Single item -->
-      <div class=\"carousel-item\">
-        <div class=\"mask\" style=\"background-color: rgba(0, 0, 0, 0.3);\">
-          <div class=\"d-flex justify-content-center align-items-center h-100\">
-            <div class=\"text-white text-center\">
-              <h2>Liste de vos contacts</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Single item -->
-      <div class=\"carousel-item\">
-        <div
-             class=\"mask\"
-             style=\"
-                    background: linear-gradient(
-                    45deg,
-                    rgba(29, 236, 197, 0.7),
-                    rgba(91, 14, 214, 0.7) 100%
-                    );
-                    \"
-             >
-          <div class=\"d-flex justify-content-center align-items-center h-100\">
-            <div class=\"text-white text-center\" data-mdb-theme=\"dark\">
-              <h2>Faites un choix</h2>
-              <a
-                 class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"#\"
-                 role=\"button\"
-                 >Groupe</a
-                >
+              <h1 class=\"mb-3\">Enregistrement d'un contact</h1>
+              
             </div>
           </div>
         </div>
@@ -346,7 +296,7 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
         yield from [];
     }
 
-    // line 196
+    // line 146
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -389,7 +339,7 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  350 => 196,  286 => 115,  276 => 107,  263 => 106,  241 => 18,  218 => 7,  205 => 197,  203 => 196,  182 => 178,  176 => 175,  167 => 168,  165 => 106,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
+        return array (  300 => 146,  278 => 106,  265 => 105,  243 => 18,  220 => 7,  207 => 147,  205 => 146,  184 => 128,  178 => 125,  169 => 118,  167 => 105,  137 => 78,  76 => 19,  74 => 18,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -471,7 +421,7 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
       <div class=\"collapse navbar-collapse\" id=\"navbarExample01\">
         <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
           <li class=\"nav-item active\">
-            <a class=\"nav-link\" aria-current=\"page\" href=\"index.html\">Accueil</a>
+            <a class=\"nav-link\" aria-current=\"page\" href=\"{{ path('app_contact_index') }}\">Accueil</a>
           </li>
         </ul>
 
@@ -494,7 +444,6 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
     <!-- Indicators -->
     <div class=\"carousel-indicators\">
       <li data-mdb-target=\"#introCarousel\" data-mdb-slide-to=\"0\" class=\"active\"></li>
-      <li data-mdb-target=\"#introCarousel\" data-mdb-slide-to=\"1\"></li>
     </div>
 
     <!-- Inner -->
@@ -505,57 +454,8 @@ class __TwigTemplate_3e3834860386dfb7ea988f88e772de6d extends Template
         <div class=\"mask\" style=\"background-color: rgba(0, 0, 0, 0.6);\">
           <div class=\"d-flex justify-content-center align-items-center h-100\">
             <div class=\"text-white text-center\" data-mdb-theme=\"dark\">
-              <h1 class=\"mb-3\">Bienvenue dans votre répertoire</h1>
-              <a
-                 class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"{{ path('app_contact_new') }}\"
-                 role=\"button\"
-                 rel=\"nofollow\"
-                 >Ajouter Contacts</a
-                >
-              <a
-                 class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"#\"
-                 role=\"button\"
-                 >Groupes</a
-                >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Single item -->
-      <div class=\"carousel-item\">
-        <div class=\"mask\" style=\"background-color: rgba(0, 0, 0, 0.3);\">
-          <div class=\"d-flex justify-content-center align-items-center h-100\">
-            <div class=\"text-white text-center\">
-              <h2>Liste de vos contacts</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Single item -->
-      <div class=\"carousel-item\">
-        <div
-             class=\"mask\"
-             style=\"
-                    background: linear-gradient(
-                    45deg,
-                    rgba(29, 236, 197, 0.7),
-                    rgba(91, 14, 214, 0.7) 100%
-                    );
-                    \"
-             >
-          <div class=\"d-flex justify-content-center align-items-center h-100\">
-            <div class=\"text-white text-center\" data-mdb-theme=\"dark\">
-              <h2>Faites un choix</h2>
-              <a
-                 class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"#\"
-                 role=\"button\"
-                 >Groupe</a
-                >
+              <h1 class=\"mb-3\">Enregistrement d'un contact</h1>
+              
             </div>
           </div>
         </div>

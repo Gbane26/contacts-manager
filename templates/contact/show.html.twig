@@ -76,18 +76,8 @@
       <div class="collapse navbar-collapse" id="navbarExample01">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="index.html">Accueil</a>
+            <a class="nav-link" aria-current="page" href="{{ path('app_contact_index') }}">Accueil</a>
           </li>
-        </ul>
-
-        <ul class="navbar-nav d-flex flex-row">
-            <!-- Search bar -->
-            <li class="nav-item me-3 me-lg-0">
-              <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
-            </li>
-            <li class="nav-item me-3 me-lg-0">
-              <button id="search-btn" class="btn btn-outline-success my-2 my-sm-0" type="button">Recherche</button>
-            </li>
         </ul>
       </div>
     </div>
@@ -113,10 +103,10 @@
               <h1 class="mb-3">Bienvenue dans votre répertoire</h1>
               <a
                  class="btn btn-outline-light btn-lg m-2" data-mdb-ripple-init
-                 href="{{ path('app_contact_new') }}"
+                 href="{{ path('app_contact_index') }}"
                  role="button"
                  rel="nofollow"
-                 >Ajouter Contacts</a
+                 >Retour à la liste</a
                 >
               <a
                  class="btn btn-outline-light btn-lg m-2" data-mdb-ripple-init

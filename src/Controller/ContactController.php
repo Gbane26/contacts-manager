@@ -27,56 +27,45 @@ final class ContactController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $contact = new Contact();
-        // Récupération des groupes depuis la base de données
-        $groups = $entityManager->getRepository(Group::class)->findAll();
-
-        // Si un groupe est déjà sélectionné, récupérez-le, sinon laissez-le vide
-        $group = $request->get('contact')['groupName'] ?? null;
-
-        if ($group) {
-            $group = $entityManager->getRepository(Group::class)->find($group);
-            if ($group) {
-                $contact->setGroupName($group);
-            }
-        }
-
         $form = $this->createForm(ContactType::class, $contact);
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Gestion de l'upload de la photo (si un fichier est téléchargé)
+            // Gestion du champ "newGroup"
+            $newGroup = $form->get('newGroup')->getData();
+            if (!empty($newGroup)) {
+                $group = new Group();
+                $group->setName($newGroup);
+
+                // Persist le nouveau groupe
+                $entityManager->persist($group);
+
+                // Associe le groupe au contact
+                $contact->setGroupName($group);
+            }
+
+            // Gestion de l'upload de la photo
             $photo = $form->get('photo')->getData();
             if ($photo) {
                 try {
-                    // Générer un nom unique pour le fichier
                     $filename = uniqid() . '.' . $photo->guessExtension();
                     $photo->move($this->getParameter('photos_directory'), $filename);
                     $contact->setPhoto($filename);
                 } catch (\Exception $e) {
-                    $this->addFlash('error', 'Une erreur est survenue lors de l\'upload de la photo.');
+                    $this->addFlash('error', 'Erreur lors du téléchargement de la photo.');
                     return $this->redirectToRoute('app_contact_new');
                 }
             }
 
-
-            // Si le contact est le premier dans un groupe, vérifiez si le groupe existe
-            $group = $contact->getGroupName();
-            if ($group && !$group->getContacts()->count()) {
-                // Si aucun autre contact n'est associé à ce groupe, supprimez-le
-                $entityManager->remove($group);
-            }
-            // Sauvegarde du contact
-            //dd($contact);
+            // Persiste le contact
             $entityManager->persist($contact);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_contact_index');
         }
-        //dd($contact);
+
         return $this->render('contact/new.html.twig', [
             'form' => $form->createView(),
-            'groups' => $groups,  
         ]);
     }
 
@@ -109,22 +98,32 @@ final class ContactController extends AbstractController
     #[Route('/{id}', name: 'app_contact_delete', methods: ['POST'])]
     public function delete(Request $request, Contact $contact, EntityManagerInterface $entityManager): Response
     {
-        // Récupérer le groupe avant de supprimer le contact
-        $group = $contact->getGroupName();
+        if ($this->isCsrfTokenValid('delete' . $contact->getId(), $request->request->get('_token'))) {
+            // Récupérer le groupe avant de supprimer le contact
+            $group = $contact->getGroupName();
 
-        if ($this->isCsrfTokenValid('delete'.$contact->getId(), $request->request->get('_token'))) {
             // Supprimer le contact
             $entityManager->remove($contact);
             $entityManager->flush();
 
-            // Si le groupe est maintenant vide, le supprimer
-            if ($group && $group->getContacts()->isEmpty()) {
-                $entityManager->remove($group);
-                $entityManager->flush();
+            // Supprimer le groupe s'il est vide
+            if ($group) {
+                $isGroupEmpty = $entityManager->getRepository(Contact::class)
+                    ->createQueryBuilder('c')
+                    ->select('COUNT(c.id)')
+                    ->where('c.groupName = :group')
+                    ->setParameter('group', $group)
+                    ->getQuery()
+                    ->getSingleScalarResult();
+
+                if ($isGroupEmpty == 0) {
+                    $entityManager->remove($group);
+                    $entityManager->flush();
+                }
             }
         }
 
-        return $this->redirectToRoute('app_contact_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_contact_index');
     }
 
     #[Route('/contact/search', name: 'contact_search')]
