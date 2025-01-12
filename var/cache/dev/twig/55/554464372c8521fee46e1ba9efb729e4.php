@@ -445,7 +445,10 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                 >
               <a
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"#\"
+                 href=\"";
+        // line 113
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_group_index");
+        yield "\"
                  role=\"button\"
                  >Groupes</a
                 >
@@ -543,7 +546,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  504 => 306,  440 => 106,  430 => 98,  417 => 97,  395 => 19,  372 => 7,  352 => 307,  350 => 306,  271 => 230,  267 => 229,  254 => 219,  244 => 214,  235 => 208,  228 => 204,  221 => 200,  217 => 199,  213 => 198,  206 => 196,  192 => 185,  177 => 173,  161 => 159,  159 => 97,  138 => 79,  77 => 20,  75 => 19,  60 => 7,  52 => 1,);
+        return array (  507 => 306,  450 => 113,  440 => 106,  430 => 98,  417 => 97,  395 => 19,  372 => 7,  352 => 307,  350 => 306,  271 => 230,  267 => 229,  254 => 219,  244 => 214,  235 => 208,  228 => 204,  221 => 200,  217 => 199,  213 => 198,  206 => 196,  192 => 185,  177 => 173,  161 => 159,  159 => 97,  138 => 79,  77 => 20,  75 => 19,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -660,7 +663,7 @@ class __TwigTemplate_926e9888d28a7c344bf8a259855e7ed0 extends Template
                 >
               <a
                  class=\"btn btn-outline-light btn-lg m-2\" data-mdb-ripple-init
-                 href=\"#\"
+                 href=\"{{ path('app_group_index') }}\"
                  role=\"button\"
                  >Groupes</a
                 >

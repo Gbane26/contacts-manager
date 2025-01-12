@@ -2,6 +2,8 @@
 namespace App\Entity;
 
 use App\Repository\ContactRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
@@ -32,6 +34,17 @@ class Contact
 
     #[ORM\ManyToOne(inversedBy: 'contacts')]
     private ?Group $groupName = null;
+
+    /**
+     * @var Collection<int, CustomFields>
+     */
+    #[ORM\OneToMany(targetEntity: CustomFields::class, mappedBy: 'contact')]
+    private Collection $fieldsCustom;
+
+    public function __construct()
+    {
+        $this->fieldsCustom = new ArrayCollection();
+    }
 
 
 
@@ -114,6 +127,36 @@ class Contact
     public function setGroupName(?Group $groupName): static
     {
         $this->groupName = $groupName;
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, CustomFields>
+     */
+    public function getFieldsCustom(): Collection
+    {
+        return $this->fieldsCustom;
+    }
+
+    public function addFieldsCustom(CustomFields $fieldsCustom): static
+    {
+        if (!$this->fieldsCustom->contains($fieldsCustom)) {
+            $this->fieldsCustom->add($fieldsCustom);
+            $fieldsCustom->setContact($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFieldsCustom(CustomFields $fieldsCustom): static
+    {
+        if ($this->fieldsCustom->removeElement($fieldsCustom)) {
+            // set the owning side to null (unless already changed)
+            if ($fieldsCustom->getContact() === $this) {
+                $fieldsCustom->setContact(null);
+            }
+        }
+
         return $this;
     }
 }

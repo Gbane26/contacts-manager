@@ -381,6 +381,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\CustomFieldsRepository" class="App\Repository\CustomFieldsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\GroupRepository" class="App\Repository\GroupRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -5210,7 +5214,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.yCH1t7k"/>
+      <argument type="service" id=".service_locator.sQPB67."/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7233,6 +7237,8 @@
     <service id=".abstract.instanceof.App\Form\GroupType" class="App\Form\GroupType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CustomFieldsRepository" class="App\Repository\CustomFieldsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CustomFieldsRepository" class="App\Repository\CustomFieldsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GroupRepository" class="App\Repository\GroupRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\GroupRepository" class="App\Repository\GroupRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.pRu6x_4" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8210,10 +8216,11 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.yCH1t7k" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.sQPB67." class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\ContactRepository" type="service_closure" id="App\Repository\ContactRepository"/>
+        <argument key="App\Repository\CustomFieldsRepository" type="service_closure" id="App\Repository\CustomFieldsRepository"/>
         <argument key="App\Repository\GroupRepository" type="service_closure" id="App\Repository\GroupRepository"/>
       </argument>
     </service>
